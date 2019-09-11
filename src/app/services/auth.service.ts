@@ -15,14 +15,14 @@ export class AuthService implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         if (this.isAuthenticated()) {
           if (route.url.toString() === 'login') {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/cpanel/dashboard']);
             return false;
           } else {
             return true;
           }
         } else {
           if (route.url.toString() !== 'login') {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/cpanel/login']);
             return false;
           } else {
             return true;
@@ -48,7 +48,7 @@ export class AuthService implements CanActivate {
 
     logout() {
         localStorage.clear();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/cpanel/login']);
     }
 
 }

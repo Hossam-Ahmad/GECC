@@ -19,6 +19,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DasboardFooterComponent } from './components/dasboard-footer/dasboard-footer.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './components/footer/footer.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CpanelComponent } from './pages/cpanel/cpanel.component';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,6 +38,10 @@ export function createHttpLoader(http: HttpClient) {
     ContactComponent,
     SidebarComponent,
     DasboardFooterComponent,
+    FooterComponent,
+    SliderComponent,
+    NavbarComponent,
+    CpanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +52,7 @@ export function createHttpLoader(http: HttpClient) {
     NgbdModalComponentModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

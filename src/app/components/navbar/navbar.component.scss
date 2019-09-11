@@ -1,0 +1,28 @@
+@import "../../../styles.scss";
+
+.bg-light{
+    background-color: transparent !important;
+}
+.navbar-nav{
+    li{
+        padding: 0 1em;
+        margin-left: 1em;
+        font-family: 'cairo-semibold';
+        a{
+            color: $white !important;
+        }
+
+    }
+}
+.logo{
+    padding: 0em 0em 0em 3em;
+}
+.navbar-toggler {
+    background-color: $babyBlue;
+    border: 1px solid $babyBlue;}
+
+.active{
+    border-radius: 20px;
+    background-color: $babyBlue;
+}
+    

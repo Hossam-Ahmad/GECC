@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.email, this.password).subscribe(result => {
         if (result['Authenicated']) {
           this.authService.setToken(result['token']);
-          this.router.navigateByUrl('/dashboard');
+          this.router.navigateByUrl('/cpanel/dashboard');
         } else {
           alert('Wrong email or password');
         }

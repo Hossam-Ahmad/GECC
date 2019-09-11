@@ -1,10 +1,1 @@
-<div class="wrapper">
-    <div *ngIf="router.url.indexOf('/dashboard') != -1 || router.url.indexOf('/contact') != -1" class="sidebar" data-color="danger" data-background-color="white" data-image="../../../assets/images/sidebar-1.jpg">
-        <app-sidebar></app-sidebar>
-        <div class="sidebar-background" style="background-image: url(./assets/images/sidebar-4.jpg)"></div>
-    </div>
-    <div *ngIf="router.url.indexOf('/dashboard') != -1 || router.url.indexOf('/contact') != -1" class="main-panel">
-        <router-outlet></router-outlet>
-    </div>
-    <router-outlet *ngIf="router.url.indexOf('/dashboard') == -1 && router.url.indexOf('/contact') == -1"></router-outlet>
-</div>
+<router-outlet></router-outlet>

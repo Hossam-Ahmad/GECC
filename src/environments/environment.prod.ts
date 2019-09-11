@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://www.gecc-ksa.com/',
+  apiUrl: 'http://pavechocolate.com/gecc_api.php/',
   defaultLanguage: 'ar',
 };
