@@ -1,0 +1,18 @@
+@mixin navbar-colors($color, $link-color) {
+    color: $link-color;
+    background-image: linear-gradient(to right,#4872aa, #589b66);
+    @include shadow-navbar-color($color);
+
+    .dropdown-item:hover,
+    .dropdown-item:focus{
+      @include shadow-small-color($color);
+      background-image: linear-gradient(to right,#4872aa, #589b66);
+      color: $link-color;
+    }
+
+    .navbar-toggler{
+        .navbar-toggler-icon{
+            background-image: linear-gradient(to right,#4872aa, #589b66);
+        }
+    }
+}

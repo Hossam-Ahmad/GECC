@@ -1,0 +1,51 @@
+
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title ">قائمه الرسائل</h4>
+                                <p class="card-category"> الرسائل مرتبة طبقا للأحدث</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                            <th>
+                                                الرسالة
+                                            </th>
+                                            <th>
+                                                التوقيت
+                                            </th>
+                                            <th>
+                                                الايميل
+                                            </th>
+                                            <th>
+                                                الاسم
+                                            </th>
+                                            <th>
+                                                الرقم
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let message of messages;let i = index;">
+                                                <td>{{message.message}}</td>
+                                                <td>{{message.datetime}}</td>
+                                                <td>{{message.email}}</td>
+                                                <td>{{message.name}}</td>
+                                                <td class="text-primary">
+                                                    {{i+1}}
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <app-dasboard-footer></app-dasboard-footer>
