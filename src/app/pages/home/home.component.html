@@ -44,10 +44,10 @@
    </div>
 
      <div class="our-services">
-        <h3>خدماتنا</h3>
+        <h3>{{'our_services' | translate}}</h3>
           <div class="row specifRow">
             <div class="col col-md-2">
-                <fa-icon [icon]="arrow"></fa-icon>
+                <fa-icon [icon]="arrow" ></fa-icon>
             </div>
 
              <div class="col col-md-3">
@@ -89,14 +89,14 @@
 
 <section class="clients">
     <div class="svg">
-        <h3>تصديق كامل طبقاً لمعايير
+        <h3>{{'iso' | translate}}
         </h3>
         <h2>ISO</h2>
         <h2 class="greenHeader">17025 , 9001</h2>
       </div>
       <div class="container">
         <div class="inner-clients">
-            <h3>كبار العملاء</h3>
+            <h3>{{'big_clients' | translate}}</h3>
             <div class="row row-center">
               <div class="col col-lg-3 col-sm-6">
                 <img src="../../../assets/images/logo4.png">
@@ -112,7 +112,7 @@
                     </div>
 
             </div>
-            <button type="button" class="btn btn-light">المزيد</button>
+            <button type="button" class="btn btn-light">{{'more' | translate}}</button>
         </div>    
       </div>
       </section>
@@ -166,11 +166,11 @@
     <div class="col col-lg-5 col-sm-12">
       <div class="works-title">
         <div class="container">
-         <h3> الأعمال  </h3>
+         <h3> {{'portfolio' | translate}}  </h3>
          <div class="spanAndP">
-         <span>باقة من أفضل أعمالنا , نقدمها لكم</span>
-         <p>لدينا فريق عمل يقدم أعمال أحترافية في مختلف المجالات</p>
-         <button type="button" class="btn btn-dark">مشاهدة المزيد</button>
+         <span>{{'portfolio_subtitle1' | translate}}</span>
+         <p>{{'portfolio_subtitle2' | translate}}</p>
+         <button type="button" class="btn btn-dark">{{'more' | translate}}</button>
         </div>
       </div>
     </div>
@@ -184,9 +184,9 @@
 <!-- contact section -->
 <section class="contact">
  <div class="container">
-   <h3>تواصل</h3>
+   <h3>{{'contact' | translate}}</h3>
    <div class="footer-inner">
-     <p>سيتم الرد على استفسارك في اقرب وقت ممكن</p>
+     <p>{{'contact_subtitle' | translate}}</p>
      <div class="row">
        <div class="col col-md-2 col-sm-6">
          <div class="footerContctInner">
@@ -214,13 +214,13 @@
         <div class="row">
           <div class="col col-md-4 col-sm-12 offset-2">
               <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="البريد الإلكتروني">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{'email' | translate}}" [(ngModel)]="senderEmail" [ngModelOptions]="{standalone: true}" required>
                   <img src="../../../assets/images/email2.png">
                 </div>
           </div>
           <div class="col col-md-4 col-sm-12">
               <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="الإسم الشخصي">
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="{{'personal_name' | translate}}" [(ngModel)]="senderName" [ngModelOptions]="{standalone: true}" required>
                   <img src="../../../assets/images/name.png">
                 </div>
             </div>
@@ -228,14 +228,14 @@
         <div class="row">
           <div class="col offset-2 col-md-8">
               <div class="form-group">
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="أكتب رسالتك هنا"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="{{'message' | translate}}" [(ngModel)]="senderMessage" [ngModelOptions]="{standalone: true}" required></textarea>
                   <img src="../../../assets/images/textarea.png">
                 </div>
           </div>
         </div>
         <div class="row">
           <div class="col offset-2">
-              <button type="submit" class="btn btn-secondary">إرسال</button>
+              <button type="submit" class="btn btn-secondary" (click)="sendMessage(senderEmail,senderName,senderMessage)">{{'send' | translate}}</button>
           </div>
         </div>
 

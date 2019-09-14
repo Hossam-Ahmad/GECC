@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {faArrowCircleLeft, faShuttleVan} from '@fortawesome/free-solid-svg-icons';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,25 @@ export class HomeComponent implements OnInit {
   faCoffee = faShuttleVan;
   arrow = faArrowCircleLeft;
   myInnerHeight: any;
+  public senderName = ''; public senderEmail = ''; public senderMessage = '';
 
-  constructor() {
+  constructor(public contactService: ContactService) {
     this.myInnerHeight = (window.innerHeight) + 'px';
   }
 
   ngOnInit() {
+  }
+
+  sendMessage(name, email, message) {
+    if (name !== '' && email !== '' && message !== '') {
+      this.contactService.sendMessage(name, email, message).subscribe(result => {
+        this.senderName = '';
+        this.senderEmail = '';
+        this.senderMessage = '';
+      });
+    } else {
+      alert('قم بإدخال كل البيانات');
+    }
   }
 
 }
