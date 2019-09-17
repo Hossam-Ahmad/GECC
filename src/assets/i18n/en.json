@@ -16,5 +16,6 @@
   "personal_name" : "Personal Name",
   "email" : "Email",
   "message" : "Write your message",
-  "send" : "Send"
+  "send" : "Send",
+  "programmedBy" : "Developed by Click4ebusiness"
 }

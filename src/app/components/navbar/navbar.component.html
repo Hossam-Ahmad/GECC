@@ -5,6 +5,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item translation" (click)="changeLanguage('ar')">
+          <a class="nav-link" href="#">Ar<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item translation" (click)="changeLanguage('en')">
+          <a class="nav-link" href="#">En<span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item" (click)="clickEvent('contact')"  [ngClass]="status == 'contact' ? 'active' : 'in-active'">
           <a class="nav-link" href="#">{{'contact_nav' | translate}} <span class="sr-only">(current)</span></a>
         </li>

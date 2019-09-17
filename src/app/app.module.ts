@@ -24,6 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CpanelComponent } from './pages/cpanel/cpanel.component';
+import { EditPageComponent } from './pages/edit-page/edit-page.component';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,6 +43,7 @@ export function createHttpLoader(http: HttpClient) {
     SliderComponent,
     NavbarComponent,
     CpanelComponent,
+    EditPageComponent,
   ],
   imports: [
     BrowserModule,

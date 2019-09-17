@@ -6,6 +6,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CpanelComponent } from './pages/cpanel/cpanel.component';
 import { AuthService } from './services/auth.service';
+import { EditPageComponent } from './pages/edit-page/edit-page.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,11 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'edit_page',
+        component: EditPageComponent,
         canActivate: [AuthService]
       },
       {
