@@ -1,0 +1,37 @@
+.about-parent{
+    text-align: right;
+    section{padding: 2em;}
+    h3{ font-family: cairo-black;
+        margin: 1em 0;
+    }
+    p,li{
+        font-family: cairo-regular;
+        line-height: 1.8;
+        width: 90%;
+        direction: rtl;
+
+    }
+.about{
+    background: url(../../../assets/images/about.jpg) no-repeat no-repeat center;
+    background-size: cover;
+    padding: 1em 0;
+    color: #fff;
+    .about-details{
+        padding: 3em 0;
+        h1{
+            font-family: 'cairo-black' !important;
+        }
+    }
+}
+.messages{
+    color: #333;
+
+}
+.aboutGECC{
+    background-color: #4d78c0;
+    color: #fff
+}
+.mission{
+    color: #fff;
+}
+}

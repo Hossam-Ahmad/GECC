@@ -17,5 +17,11 @@
   "email" : "Email",
   "message" : "Write your message",
   "send" : "Send",
-  "programmedBy" : "Developed by Click4ebusiness"
+  "programmedBy" : "Developed by Click4ebusiness",
+  "our_message" : "Our Message",
+  "our_targets" : "Our Targets",
+  "our_missions" : "Our Missions",
+  "our_vision" : "Our Vision",
+  "our_clients" : "Our Clients",
+  "our_portfolio" : "Portfolio"
 }

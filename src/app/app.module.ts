@@ -25,6 +25,11 @@ import { SliderComponent } from './components/slider/slider.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CpanelComponent } from './pages/cpanel/cpanel.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ClientComponent } from './pages/client/client.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { PortoflioComponent } from './pages/portoflio/portoflio.component';
+import { UpperComponentComponent } from './components/upper-component/upper-component.component';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,6 +49,11 @@ export function createHttpLoader(http: HttpClient) {
     NavbarComponent,
     CpanelComponent,
     EditPageComponent,
+    AboutComponent,
+    ClientComponent,
+    ServicesComponent,
+    PortoflioComponent,
+    UpperComponentComponent,
   ],
   imports: [
     BrowserModule,

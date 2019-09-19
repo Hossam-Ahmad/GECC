@@ -6,21 +6,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item translation" (click)="changeLanguage('ar')">
-          <a class="nav-link" href="#">Ar<span class="sr-only">(current)</span></a>
+          <a class="nav-link" style="cursor: pointer" [style.text-decoration]="language == null || language == 'ar' ? 'underline' : 'none'">Ar<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item translation" (click)="changeLanguage('en')">
-          <a class="nav-link" href="#">En<span class="sr-only">(current)</span></a>
+          <a class="nav-link" style="cursor: pointer" [style.text-decoration]="language == 'en' ? 'underline' : 'none'">En<span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item" (click)="clickEvent('contact')"  [ngClass]="status == 'contact' ? 'active' : 'in-active'">
+        <li class="nav-item" (click)="clickEvent('contact')"  [ngClass]="status == '/contact' ? 'active' : 'in-active'">
           <a class="nav-link" href="#">{{'contact_nav' | translate}} <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item" (click)="clickEvent('service')"  [ngClass]="status == 'service' ? 'active' : 'in-active'">
-          <a class="nav-link" href="#">{{'services_nav' | translate}}</a>
+        <li class="nav-item" (click)="clickEvent('/services')"  [ngClass]="status == '/services' ? 'active' : 'in-active'">
+          <a class="nav-link" href="#" routerLinkActive="on" [routerLink]="'/services'">{{'services_nav' | translate}}</a>
         </li>
-        <li class="nav-item" (click)="clickEvent('about')"  [ngClass]="status == 'about' ? 'active' : 'in-active'">
-            <a class="nav-link" href="#">{{'about_nav' | translate}}</a>
+        <li class="nav-item" (click)="clickEvent('/about')"  [ngClass]="status == '/about' ? 'active' : 'in-active'">
+            <a class="nav-link" href="#" routerLinkActive="on" [routerLink]="'/about'">{{'about_nav' | translate}}</a>
           </li>
-          <li class="nav-item" (click)="clickEvent('home')"  [ngClass]="status == 'home' ? 'active' : 'in-active'" >
+          <li class="nav-item" (click)="clickEvent('/')"  [ngClass]="status == '/' ? 'active' : 'in-active'" >
             <a class="nav-link" href="#">{{'home_nav' | translate}}</a>
           </li>
       </ul>

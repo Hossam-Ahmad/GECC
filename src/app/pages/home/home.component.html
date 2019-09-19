@@ -46,8 +46,8 @@
      <div class="our-services">
         <h3>{{'our_services' | translate}}</h3>
           <div class="row specifRow">
-            <div class="col col-md-2">
-                <fa-icon [icon]="arrow" ></fa-icon>
+            <div>
+                <fa-icon [icon]="arrow" class="col col-md-2" [routerLink]="'/services'" style="cursor: pointer;"></fa-icon>
             </div>
 
              <div class="col col-md-3">
@@ -112,7 +112,7 @@
                     </div>
 
             </div>
-            <button type="button" class="btn btn-light">{{'more' | translate}}</button>
+            <button type="button" class="btn btn-light" [routerLink]="'/client'">{{'more' | translate}}</button>
         </div>    
       </div>
       </section>
@@ -170,7 +170,7 @@
          <div class="spanAndP">
          <span>{{'portfolio_subtitle1' | translate}}</span>
          <p>{{'portfolio_subtitle2' | translate}}</p>
-         <button type="button" class="btn btn-dark">{{'more' | translate}}</button>
+         <button type="button" class="btn btn-dark" routerLinkActive="on" [routerLink]="'/portfolio'">{{'more' | translate}}</button>
         </div>
       </div>
     </div>

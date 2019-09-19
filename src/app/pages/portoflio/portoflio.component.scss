@@ -1,0 +1,44 @@
+.client{
+    background: url(../../../assets/images/about.jpg) no-repeat no-repeat center;
+    background-size: cover;
+    padding: 1em 0;
+    .client-details{
+        padding: 3em;
+
+.client-header{
+    direction: rtl;
+    text-align: right;
+    color: #fff;
+}
+
+}
+}
+.portfolio{ margin: 5em 0 0;
+    .titlePicture{
+        background: url(../../../assets/images/ourWorks.jpg) no-repeat no-repeat center;
+        background-size: cover;
+        height: 20em;
+        width: 80%;
+        margin: 1em auto;
+        position: relative;
+        span{
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            background-color: #fff;
+            padding: 1em;
+            font-family: cairo-black;
+        }
+    }
+    .detailsOfWorks{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        .worksInner{padding: 2em;
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+}
