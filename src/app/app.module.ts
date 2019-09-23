@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponentModule } from './modals/modal.module';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpClientJsonpModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -30,10 +30,21 @@ import { ClientComponent } from './pages/client/client.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { PortoflioComponent } from './pages/portoflio/portoflio.component';
 import { UpperComponentComponent } from './components/upper-component/upper-component.component';
+import { AngularFireModule } from '@angular/fire';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyBbgmxwH5_plwHaw78dt41qlvbcbR4AwmU',
+  authDomain: 'gecc-252518.firebaseapp.com',
+  databaseURL: 'https://gecc-252518.firebaseio.com',
+  projectId: 'gecc-252518',
+  storageBucket: '',
+  messagingSenderId: '1057653798732',
+  appId: '1:1057653798732:web:08ec4cb7620407f927c1e9'
+};
 
 @NgModule({
   declarations: [
@@ -63,8 +74,10 @@ export function createHttpLoader(http: HttpClient) {
     NgbModule,
     NgbdModalComponentModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

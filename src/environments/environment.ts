@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://127.0.0.1/gecc/api.php/',
+  apiUrl: '/api',
+  // apiUrl: 'http://127.0.0.1/gecc/api.php/',
   // apiUrl: 'http://pavechocolate.com/gecc_api.php/',
   defaultLanguage: 'ar',
 };

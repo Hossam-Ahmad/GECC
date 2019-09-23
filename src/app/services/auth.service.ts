@@ -1,6 +1,6 @@
 import {environment} from '../../environments/environment';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -39,11 +39,20 @@ export class AuthService implements CanActivate {
     }
 
     login(email: string, password: string) {
-        const params = new HttpParams()
-            .append('username_login', email)
-            .append('password_login', password)
-            .append('action', 'login');
-        return this.httpClient.request('GET', environment.apiUrl, {responseType: 'json', params});
+      let headers = new HttpHeaders();
+      headers = headers.append('Access-Control-Allow-Origin', '*');
+      headers = headers.append('Access-Control-Allow-Headers', '*');
+      headers = headers.append('Access-Control-Allow-Methods', '*');
+      headers = headers.append('Access-Control-Allow-Credentials', '*');
+      headers = headers.append('Access-Control-Max-Age', '86400');
+      headers = headers.append('Content-Type', 'application/json');
+      headers = headers.append('Access-Control-Expose-Headers', 'Authorization');
+
+      const params = new HttpParams()
+        .append('username_login', email)
+        .append('password_login', password)
+        .append('action', 'login');
+      return this.httpClient.request('GET', environment.apiUrl, {responseType: 'json', params, headers});
     }
 
     logout() {

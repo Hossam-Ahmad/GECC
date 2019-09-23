@@ -1,0 +1,9 @@
+{
+    "/api/*": {
+      "target": "http://pavechocolate.com",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "pathRewrite": {"^/api" : "http://pavechocolate.com/gecc_api.php"}
+    }
+  }
