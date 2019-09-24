@@ -1,31 +1,58 @@
-<nav class="navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg z-depth-0 navbar-dark" [containerInside]="false">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item translation" (click)="changeLanguage('ar')">
-          <a class="nav-link" style="cursor: pointer" [style.text-decoration]="language == null || language == 'ar' ? 'underline' : 'none'">Ar<span class="sr-only">(current)</span></a>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand>
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/images/logo.png">
+    </a>
+  </mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item"  (click)="clickEvent('/about')"  [ngClass]="status == '/' ? 'active' : 'in-active'">
+          <a class="nav-link waves-light" mdbWavesEffect  href="#" routerLinkActive="on" [routerLink]="'/'">{{'home_nav' | translate}}</a>
         </li>
-        <li class="nav-item translation" (click)="changeLanguage('en')">
-          <a class="nav-link" style="cursor: pointer" [style.text-decoration]="language == 'en' ? 'underline' : 'none'">En<span class="sr-only">(current)</span></a>
+
+        <li class="nav-item"  (click)="clickEvent('/about')"  [ngClass]="status == '/about' ? 'active' : 'in-active'">
+          <a class="nav-link waves-light" mdbWavesEffect  href="#" routerLinkActive="on" [routerLink]="'/about'">{{'about_nav' | translate}}</a>
         </li>
-        <li class="nav-item" (click)="clickEvent('contact')"  [ngClass]="status == '/contact' ? 'active' : 'in-active'">
-          <a class="nav-link" href="#">{{'contact_nav' | translate}} <span class="sr-only">(current)</span></a>
-        </li>
+
         <li class="nav-item" (click)="clickEvent('/services')"  [ngClass]="status == '/services' ? 'active' : 'in-active'">
-          <a class="nav-link" href="#" routerLinkActive="on" [routerLink]="'/services'">{{'services_nav' | translate}}</a>
+          <a class="nav-link waves-light" mdbWavesEffect href="#" routerLinkActive="on" [routerLink]="'/services'">{{'services_nav' | translate}}</a>
         </li>
-        <li class="nav-item" (click)="clickEvent('/about')"  [ngClass]="status == '/about' ? 'active' : 'in-active'">
-            <a class="nav-link" href="#" routerLinkActive="on" [routerLink]="'/about'">{{'about_nav' | translate}}</a>
+        
+        <li class="nav-item" (click)="clickEvent('contact')"  [ngClass]="status == '/contact' ? 'active' : 'in-active'">
+          <a class="nav-link waves-light" mdbWavesEffect href="#">{{'contact_nav' | translate}} <span class="sr-only">(current)</span></a>
+        </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                {{'language' | translate}} <span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                <li class="nav-item translation" (click)="changeLanguage('ar')">
+                    <a class="nav-link dropdown-item waves-light"  mdbWavesEffect style="cursor: pointer" [style.text-decoration]="language == null || language == 'ar' ? 'underline' : 'none'">Ar<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item translation" (click)="changeLanguage('en')">
+                    <a class="nav-link dropdown-item waves-light"  mdbWavesEffect style="cursor: pointer" [style.text-decoration]="language == 'en' ? 'underline' : 'none'">En<span class="sr-only">(current)</span></a>
+                  </li> 
+            </div>
           </li>
-          <li class="nav-item" (click)="clickEvent('/')"  [ngClass]="status == '/' ? 'active' : 'in-active'" >
-            <a class="nav-link" href="#">{{'home_nav' | translate}}</a>
-          </li>
+
       </ul>
-      <div class="logo">
-         <img src="assets/images/logo.png">
-      </div>
-    </div>
-  </nav>
+      <!-- Links -->
+
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+
+
+

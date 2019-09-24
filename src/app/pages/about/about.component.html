@@ -1,8 +1,12 @@
-<section class="about-parent" style="background-color: #fff">
+<section class="first-section" [ngStyle]="{'height': myInnerHeight}" style="background-color: #38aab6;">
+    <div class="container">
+      <app-navbar></app-navbar>
+    </div>
+</section>
+<section class="about-parent">
     <section class="about" [ngStyle]="{'height': aboutHeight}">
         <div class="container">
-            <app-navbar></app-navbar>
-            <div class="about-details"></div>
+             <div class="about-details"></div>
                 <h1 style="font-family: cairo-black">{{'about_nav' | translate}}</h1>
             </div>
     </section>

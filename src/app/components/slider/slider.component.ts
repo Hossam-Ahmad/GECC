@@ -15,7 +15,12 @@ export class SliderComponent implements OnInit {
   ];
 
   constructor() {
-    this.myInnerHeight = (window.innerHeight - 74) + 'px';
+    if(window.innerWidth >= 800){
+      this.myInnerHeight = (window.innerHeight) + 'px';
+    }else{
+      this.myInnerHeight = (window.innerHeight*25/100) + 'px';
+    }
+    // this.myInnerHeight = (window.innerHeight - 74) + 'px';
   }
 
   ngOnInit() {

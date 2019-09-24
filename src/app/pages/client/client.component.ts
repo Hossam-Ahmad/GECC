@@ -9,7 +9,9 @@ export class ClientComponent implements OnInit {
 
   aboutHeight: any;
   constructor() {
-    this.aboutHeight = (window.innerHeight) * ( 2 / 3) + 'px';
+    if(window.innerWidth >= 800){
+      this.aboutHeight = (window.innerHeight) * ( 2 / 3) + 'px';
+    }
   }
 
   ngOnInit() {
