@@ -7,3 +7,11 @@ $green: #57a05f;
 $darkGrey: #90a3b2;
 $footer : #29313c;
 $footerFont: #a5a7aa;
+
+.main-content{
+    background-color: #eeeeee;
+}
+
+.main-panel .main-content{
+    margin-top: 0px !important;
+}

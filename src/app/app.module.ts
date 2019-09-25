@@ -33,6 +33,7 @@ import { UpperComponentComponent } from './components/upper-component/upper-comp
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { LanguageService } from './services/language.service';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -94,6 +95,7 @@ const firebaseConfig = {
     AuthService,
     ContentService,
     ContactService,
+    LanguageService
   ],
   bootstrap: [AppComponent]
 })

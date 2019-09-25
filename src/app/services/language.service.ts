@@ -1,10 +1,10 @@
-import {environment} from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class LanguageService {
 
-    constructor(public httpClient: HttpClient, public translate: TranslateService) {}
+    constructor(public translate: TranslateService) {}
 
     getCurrentLanguage() {
         if (localStorage.getItem('language') != null) {
