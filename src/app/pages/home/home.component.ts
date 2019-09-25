@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   faCoffee = faShuttleVan;
   arrow = faArrowCircleLeft;
   myInnerHeight: any;
+  innerWidth = 800;
   public senderName = ''; public senderEmail = ''; public senderMessage = '';
 
   constructor(public contactService: ContactService) {
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
   }
 
   sendMessage(name, email, message) {

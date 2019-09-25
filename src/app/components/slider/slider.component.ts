@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
+  subtitle = `
+  ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز
+
+  ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز
+
+  ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز ابجد هوز
+  `;
+
+  max_chars;
 
   myInnerHeight: any;
   images = [
@@ -17,10 +26,11 @@ export class SliderComponent implements OnInit {
   constructor() {
     if(window.innerWidth >= 800){
       this.myInnerHeight = (window.innerHeight) + 'px';
+      this.max_chars = 200;
     }else{
+      this.max_chars = 75;
       this.myInnerHeight = (window.innerHeight*25/100) + 'px';
     }
-    // this.myInnerHeight = (window.innerHeight - 74) + 'px';
   }
 
   ngOnInit() {
