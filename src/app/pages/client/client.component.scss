@@ -5,13 +5,13 @@
     .client-details{
         padding: 3em;
 
-.client-header{
-    direction: rtl;
-    text-align: right;
-    color: #fff;
-}
+        .client-header{
+            direction: rtl;
+            text-align: right;
+            color: #fff;
+        }
 
-}
+    }
 }
 .listOfClients{
     background-color: #fff;
@@ -19,5 +19,11 @@
     .clientLogo{
         text-align: center;
         margin: 2em 0;
+    }
+}
+
+@media (max-width: 576px) { 
+    .client-header{
+        font-size: 30px
     }
 }

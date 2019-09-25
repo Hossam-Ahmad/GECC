@@ -31,6 +31,8 @@ import { ServicesComponent } from './pages/services/services.component';
 import { PortoflioComponent } from './pages/portoflio/portoflio.component';
 import { UpperComponentComponent } from './components/upper-component/upper-component.component';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -77,7 +79,9 @@ const firebaseConfig = {
     HttpClientJsonpModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
