@@ -14,16 +14,16 @@ export class HomeComponent implements OnInit {
   faCoffee = faShuttleVan;
   arrow = faArrowCircleLeft;
   myInnerHeight: any;
-  features = [];
+  public features = [];
+  public services = [];
+  public portofolio = [];
   public company = null;
   public senderName = ''; public senderEmail = ''; public senderMessage = '';
+  public innerWidth = 800;
+  public el;
+  public el2;
 
   constructor(public contactService: ContactService, public contentService: ContentService, public languageService: LanguageService) {
-    if (window.innerWidth >= 800) {
-      this.myInnerHeight = (window.innerHeight) + 'px';
-    } else {
-      this.myInnerHeight = (window.innerHeight * 25 / 100) + 'px';
-    }
     this.initData();
   }
 
@@ -33,11 +33,24 @@ export class HomeComponent implements OnInit {
     });
     this.contentService.getCompany().subscribe(data => {
       this.company = data[0];
-      console.log(this.company);
+    });
+    this.contentService.getTopSerices().subscribe(data => {
+      this.services = data;
+    });
+    this.contentService.getTopPortfolio().subscribe(data => {
+      this.portofolio = data;
     });
   }
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
+    if (window.innerWidth >= 800) {
+      this.myInnerHeight = (window.innerHeight) + 'px';
+    } else {
+      this.el = document.getElementById('navbarid');
+      this.el2 = document.getElementById('sliderbarid');
+      this.myInnerHeight = this.el.getBoundingClientRect().height + this.el2.getBoundingClientRect().height + 'px';
+    }
   }
 
   sendMessage(name, email, message) {

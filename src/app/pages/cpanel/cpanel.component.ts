@@ -17,4 +17,8 @@ export class CpanelComponent implements OnInit {
     return this.router.url === '/cpanel/login';
   }
 
+  isMobile() {
+    return window.innerWidth < 800;
+  }
+
 }

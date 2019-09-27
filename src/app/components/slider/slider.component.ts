@@ -11,13 +11,16 @@ export class SliderComponent implements OnInit {
 
   myInnerHeight: any;
   public sliders = [];
+  max_chars : number;
 
   constructor(public contentService: ContentService, public languageService: LanguageService) {
     this.getSlider();
     if (window.innerWidth >= 800) {
       this.myInnerHeight = (window.innerHeight) + 'px';
+      this.max_chars = 200;
     } else {
       this.myInnerHeight = (window.innerHeight * 25 / 100) + 'px';
+      this.max_chars = 75;
     }
   }
 
@@ -30,5 +33,27 @@ export class SliderComponent implements OnInit {
       this.sliders = data;
     });
   }
+
+  maxWord(word) {
+    if (word) {
+      if (word.length >= this.max_chars) {
+        return word.substring(0, this.max_chars) + '...';
+      } else {
+        return word;
+      }
+    }
+    return '';
+  }
+
+  more() {
+    const scrollToTop = window.setInterval(() => {
+        const pos = window.scrollY;
+        if (pos < window.innerHeight) {
+            window.scrollTo(0, pos + 20); // how far to scroll on each step
+        } else {
+            window.clearInterval(scrollToTop);
+        }
+    }, 16);
+}
 
 }

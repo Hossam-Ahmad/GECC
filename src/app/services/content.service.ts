@@ -39,4 +39,36 @@ export class ContentService {
 
     }
 
+    getTopSerices() {
+        return this.fs.collection('top-services').valueChanges();
+    }
+
+    updateTopServices() {
+
+    }
+
+    getSerices() {
+        return this.fs.collection('services').valueChanges();
+    }
+
+    updateServices() {
+
+    }
+
+    getTopPortfolio() {
+        return this.fs.collection('top-portfolio').valueChanges();
+    }
+
+    updateTopPortfolio() {
+
+    }
+
+    getPortfolio() {
+        return this.fs.collection('portfolio').valueChanges();
+    }
+
+    updatePortfolio() {
+
+    }
+
 }

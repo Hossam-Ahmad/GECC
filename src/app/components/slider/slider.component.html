@@ -1,4 +1,4 @@
-<ngb-carousel [ngStyle]="{'height': myInnerHeight}" style="overflow: hidden;">
+<ngb-carousel #sliderbarid id="sliderbarid" [ngStyle]="{'height': myInnerHeight}" style="overflow: hidden;">
     <ng-template *ngFor="let slider of sliders;" ngbSlide>
       <div class="picsum-img-wrapper">
         <img [src]="slider.image" alt="slider image">
@@ -6,8 +6,8 @@
       <div class="carousel-caption">
           <div class="content">
               <h1>{{languageService.getCurrentLanguage() == 'ar' ? slider?.title_Ar : slider?.title_En }}</h1>
-              <p>{{languageService.getCurrentLanguage() == 'ar' ? slider?.subtitle_Ar : slider?.subtitle_En }}</p>
-              <button type="button" class="btn btn-light">{{'more' | translate}}</button>
+              <p>{{languageService.getCurrentLanguage() == 'ar' ? maxWord(slider?.subtitle_Ar) : maxWord(slider?.subtitle_En) }}</p>
+              <button type="button" class="btn btn-light" (click)="more()">{{'more' | translate}}</button>
           </div>
       </div>
     </ng-template>

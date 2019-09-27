@@ -1,5 +1,5 @@
 <!-- first section -->
-<section class="first-section" [ngStyle]="{'height': myInnerHeight}">
+<section class="first-section" [ngStyle]="{'height': el? el.getBoundingClientRect().height + el2.getBoundingClientRect().height + 'px' : myInnerHeight}">
     <div class="container">
       <app-navbar></app-navbar>
     </div>
@@ -27,43 +27,23 @@
      <div class="our-services">
         <h3>{{'our_services' | translate}}</h3>
           <div class="row specifRow">
-            <div>
-                <fa-icon [icon]="arrow" class="col col-md-2" [routerLink]="'/services'" style="cursor: pointer;"></fa-icon>
-            </div>
-
-             <div class="col col-md-3">
+              <div class="col col-lg-2" [ngStyle]="{'display': innerWidth >= 800 ? 'block' : 'none'}">
+                <div>
+                    <fa-icon [icon]="arrow" class="col col-md-2" [routerLink]="'/services'" style="cursor: pointer;"></fa-icon>
+                </div>
+              </div>
+             <div class="col col-md-3" *ngFor="let service of services">
                  <!-- effect -->
 
-                <figure class="box">
-                    <img src="../../../assets/images/photo1.jpg" alt="csspoints" />
+                <figure class="box" [routerLink]="'/services'">
+                    <img src="{{service.image}}" alt="service image" />
                     <figcaption>
-                      <h5>خدمة رقم 3</h5>
+                      <h5>{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h5>
                     </figcaption>
-                    <a href="#"></a>
+                    <a></a>
                   </figure>
              </div>
-             <div class="col col-md-3">
-                <!-- effect -->
 
-               <figure class="box">
-                   <img src="../../../assets/images/photo2.jpg" alt="csspoints"/>
-                   <figcaption>
-                     <h5>خدمة رقم 2</h5>
-                   </figcaption>
-                   <a href="#"></a>
-                 </figure>
-            </div>
-            <div class="col col-md-3">
-                <!-- effect -->
-
-               <figure class="box">
-                   <img src="../../../assets/images/photo3.png" alt="csspoints" />
-                   <figcaption>
-                     <h5>خدمة رقم 1</h5>
-                   </figcaption>
-                   <a href="#"></a>
-                 </figure>
-            </div>
           </div>
      </div>
  </div>
@@ -104,47 +84,40 @@
 <section class="works">
  <div class="container-fluid">
   <div class="row">
-    <div class="col col-lg-7 col-sm-12 colredCol" style="border-radius: 25px;">
+    
+      <div class="col col-lg-5 col-12" [ngStyle]="{'display': innerWidth >= 800 ? 'none' : 'block'}">
+          <div class="works-title">
+            <div class="container">
+             <h3> {{'portfolio' | translate}}  </h3>
+             <div class="spanAndP">
+             <span>{{'portfolio_subtitle1' | translate}}</span>
+             <p>{{'portfolio_subtitle2' | translate}}</p>
+             <button type="button" class="btn btn-dark" routerLinkActive="on" [routerLink]="'/portfolio'">{{'more' | translate}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="col col-lg-7 col-12 colredCol" style="border-radius: 25px;">
+
       <div class="container">
        <div class="row">
-         <div class="col col-md-4">
+         <div class="col col-md-4" *ngFor="let item of portofolio" style="cursor: pointer;" [routerLink]="'/portfolio'">
            <div class="inner-works">
              <div class="img-works">
-               <img src="../../../assets/images/works.jpg">
+               <img src="{{item.image}}">
              </div>
              <div class="details-works">
-             <span>تنقية مياة</span>
-             <p>عنوان فرعي عن العمل المذكور هنا و الصورة اعلاه</p>
+             <span>{{languageService.getCurrentLanguage() == 'ar' ? item?.tag_Ar : item?.tag_En }}</span>
+             <p>{{languageService.getCurrentLanguage() == 'ar' ? item?.title_Ar : item?.title_En }}</p>
             </div>
            </div>
          </div>
-         <div class="col col-md-4">
-            <div class="inner-works">
-              <div class="img-works">
-                <img src="../../../assets/images/works.jpg">
-              </div>
-              <div class="details-works">
-              <span>تنقية مياة</span>
-              <p>عنوان فرعي عن العمل المذكور هنا و الصورة اعلاه</p>
-             </div>
-            </div>
-          </div>
-          <div class="col col-md-4">
-              <div class="inner-works">
-                <div class="img-works">
-                  <img src="../../../assets/images/works.jpg">
-                </div>
-                <div class="details-works">
-                <span>تنقية مياة</span>
-                <p>عنوان فرعي عن العمل المذكور هنا و الصورة اعلاه</p>
-               </div>
-              </div>
-            </div>
        </div>
       </div>
     </div>
 
-    <div class="col col-lg-5 col-sm-12">
+    <div class="col col-lg-5 col-12" [ngStyle]="{'display': innerWidth >= 800 ? 'block' : 'none'}">
       <div class="works-title">
         <div class="container">
          <h3> {{'portfolio' | translate}}  </h3>
@@ -163,13 +136,13 @@
 
 
 <!-- contact section -->
-<section class="contact">
+<section class="contact" id="contact">
  <div class="container">
    <h3>{{'contact' | translate}}</h3>
    <div class="footer-inner">
      <p>{{'contact_subtitle' | translate}}</p>
      <div class="row">
-       <div class="col col-md-2 col-sm-6">
+        <div class="col col-md-2 col-6 padded">
          <div class="footerContctInner">
            <a href="{{company?.facebook}}">
               <img src="../../../assets/images/facebook.png">
@@ -182,17 +155,17 @@
            </a>
          </div>
        </div>
-       <div class="col col-md-3 col-sm-6 contactDetails">
+       <div class="col col-md-3 col-6 contactDetails padded">
          <span>
             {{languageService.getCurrentLanguage() == 'ar' ? company?.address_Ar : company?.address_En }}
           </span>
          <img src="../../../assets/images/location.png">
        </div>
-       <div class="col col-md-3 col-sm-6 contactDetails">
+       <div class="col col-md-3 col-6 contactDetails padded lefted">
         <span>{{company?.tel}}</span>
         <img src="../../../assets/images/phone.png">
       </div>
-      <div class="col col-md-3 col-sm-6 contactDetails">
+      <div class="col col-md-3 col-6 contactDetails padded">
         <span>{{company?.email}}</span>
         <img src="../../../assets/images/email.png">
       </div>
@@ -201,13 +174,13 @@
        <div class="container">
       <form>
         <div class="row">
-          <div class="col col-md-4 col-sm-12 offset-2">
+            <div class="col col-md-4 col-12 offset-2 input1">
               <div class="form-group">
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{'email' | translate}}" [(ngModel)]="senderEmail" [ngModelOptions]="{standalone: true}" required>
                   <img src="../../../assets/images/email2.png">
                 </div>
           </div>
-          <div class="col col-md-4 col-sm-12">
+          <div class="col col-md-4 col-12">
               <div class="form-group">
                   <input type="text" class="form-control" id="exampleInputPassword1" placeholder="{{'personal_name' | translate}}" [(ngModel)]="senderName" [ngModelOptions]="{standalone: true}" required>
                   <img src="../../../assets/images/name.png">
@@ -215,7 +188,7 @@
             </div>
         </div>
         <div class="row">
-          <div class="col offset-2 col-md-8">
+            <div class="col offset-md-2 col-md-8">
               <div class="form-group">
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="{{'message' | translate}}" [(ngModel)]="senderMessage" [ngModelOptions]="{standalone: true}" required></textarea>
                   <img src="../../../assets/images/textarea.png">
@@ -223,7 +196,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col offset-2">
+            <div class="col offset-md-2">
               <button type="submit" class="btn btn-secondary" (click)="sendMessage(senderName,senderEmail,senderMessage)">{{'send' | translate}}</button>
           </div>
         </div>

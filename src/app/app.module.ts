@@ -34,6 +34,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LanguageService } from './services/language.service';
+import { DashboardNavbarComponent } from './components/dashboard-navbar/dashboard-navbar.component';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -68,6 +69,7 @@ const firebaseConfig = {
     ServicesComponent,
     PortoflioComponent,
     UpperComponentComponent,
+    DashboardNavbarComponent,
   ],
   imports: [
     BrowserModule,

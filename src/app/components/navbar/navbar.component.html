@@ -1,5 +1,5 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg z-depth-0 navbar-dark" [containerInside]="false">
+<mdb-navbar #navbarid id="navbarid" SideClass="navbar navbar-expand-lg z-depth-0 navbar-dark" [containerInside]="false">
 
   <!-- Navbar brand -->
   <mdb-navbar-brand>
@@ -23,7 +23,7 @@
         <li class="nav-item" (click)="clickEvent('/services')"  [ngClass]="status == '/services' ? 'active' : 'in-active'">
           <a class="nav-link waves-light items-style" mdbWavesEffect href="#" routerLinkActive="on" [routerLink]="'/services'">{{'services_nav' | translate}}</a>
         </li>
-        <li class="nav-item" (click)="clickEvent('contact')"  [ngClass]="status == '/contact' ? 'active' : 'in-active'">
+        <li class="nav-item" (click)="contact()" [ngClass]="status == '/contact' ? 'active' : 'in-active'">
           <a class="nav-link waves-light items-style" mdbWavesEffect href="#">{{'contact_nav' | translate}} <span class="sr-only">(current)</span></a>
         </li>
 
