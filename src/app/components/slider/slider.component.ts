@@ -11,6 +11,7 @@ export class SliderComponent implements OnInit {
 
   myInnerHeight: any;
   public sliders = [];
+  public sliders2 = [];
   max_chars : number;
 
   constructor(public contentService: ContentService, public languageService: LanguageService) {
@@ -31,6 +32,10 @@ export class SliderComponent implements OnInit {
   getSlider() {
     this.contentService.getSlider().subscribe(data => {
       this.sliders = data;
+      this.sliders2 = [];
+      for(let index = 0;index < this.sliders.length;index++) {
+        this.sliders2.push(this.sliders[index].payload.doc.data());
+      }
     });
   }
 

@@ -36,10 +36,10 @@
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let slider of sliders;let i = index;">
-                                            <td><button mat-raised-button type="submit" class="btn btn-danger pull-right">حذف</button></td>
+                                        <tr *ngFor="let slider of sliders2;let i = index;">
+                                            <td><button mat-raised-button type="submit" class="btn btn-danger pull-right"(click)="deleteSliders(i)">حذف</button></td>
                                             <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
-                                                border-color: #4c7b9d;">تعديل</button></td>
+                                                border-color: #4c7b9d;"(click)="updateSliders(i)">تعديل</button></td>
                                             <td><img style="width: 200px;" src="{{slider.image}}"></td>
                                             <td>{{slider.subtitle_En}}</td>
                                             <td>{{slider.subtitle_Ar}}</td>
@@ -130,9 +130,9 @@
                                             </th>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let service of services;let i = index;">   
+                                            <tr *ngFor="let service of services2;let i = index;">   
                                                 <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
-                                                    border-color: #4c7b9d;">تعديل</button></td>
+                                                    border-color: #4c7b9d;"(click)="updateTopServices(i)">تعديل</button></td>
                                                 <td><img style="width: 200px;" src="{{service.image}}"></td>
                                                 <td>{{service.title_En}}</td>
                                                 <td>{{service.title_Ar}}</td>
@@ -181,9 +181,9 @@
                                             </th>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let item of portfolio;let i = index;">   
+                                            <tr *ngFor="let item of portfolio2;let i = index;">   
                                                 <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
-                                                    border-color: #4c7b9d;">تعديل</button></td>
+                                                    border-color: #4c7b9d;" (click)="updatePortfolio(i)">تعديل</button></td>
                                                 <td><img style="width: 200px;" src="{{item.image}}"></td>
                                                 <td>{{item.tag_En}}</td>
                                                 <td>{{item.tag_Ar}}</td>

@@ -7,32 +7,32 @@ export class ContentService {
     constructor(public fs: AngularFirestore) {}
 
     getSlider() {
-        return this.fs.collection('slider').valueChanges();
+        return this.fs.collection('slider').snapshotChanges();
     }
 
     addSlider(data) {
         this.fs.collection('slider').add({
-            image : data.Image,
-            title_Ar : data.Title_Ar,
-            title_En : data.Title_En,
-            subtitle_Ar : data.subTitle_Ar,
-            subtitle_En : data.subTitle_En,
+            image : data.image,
+            title_Ar : data.title_Ar,
+            title_En : data.title_En,
+            subtitle_Ar : data.subtitle_Ar,
+            subtitle_En : data.subtitle_En,
         });
     }
 
     updateSlider(docId, data) {
-        this.fs.collection('top-features')
-        .doc(docId).set({   
-            image : data.Image,
-            title_Ar : data.Title_Ar,
-            title_En : data.Title_En,
-            subtitle_Ar : data.subTitle_Ar,
-            subtitle_En : data.subTitle_En,
-        }, { merge: true });
+        this.fs.collection('slider')
+        .doc(docId).update({
+            image : data.image,
+            title_Ar : data.title_Ar,
+            title_En : data.title_En,
+            subtitle_Ar : data.subtitle_Ar,
+            subtitle_En : data.subtitle_En,
+        });
     }
 
-    deleteSlider() {
-
+    deleteSlider(docId) {
+        this.fs.collection('slider').doc(docId).delete();
     }
 
     getFeatures() {
@@ -54,15 +54,16 @@ export class ContentService {
     }
 
     getTopServices() {
-        return this.fs.collection('top-services').valueChanges();
+        return this.fs.collection('top-services').snapshotChanges();
     }
 
     updateTopServices(docId, data) {
         this.fs.collection('top-services')
-        .doc(docId).set({   
-            title_Ar : data.Title_Ar,
-            title_En : data.Title_En,
-        }, { merge: true });
+        .doc(docId).update({
+            title_Ar : data.title_Ar,
+            title_En : data.title_En,
+            image : data.image
+        });
     }
 
     getServices() {
@@ -94,7 +95,7 @@ export class ContentService {
     }
 
     getTopPortfolio() {
-        return this.fs.collection('top-portfolio').valueChanges();
+        return this.fs.collection('top-portfolio').snapshotChanges();
     }
 
     updateTopPortfolio(docId, data) {
