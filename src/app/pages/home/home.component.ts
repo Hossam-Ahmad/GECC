@@ -17,7 +17,9 @@ export class HomeComponent implements OnInit {
   public features = [];
   public features2 = [];
   public services = [];
+  public services2 = [];
   public portofolio = [];
+  public portofolio2 = [];
   public company = null;
   public senderName = ''; public senderEmail = ''; public senderMessage = '';
   public innerWidth = 800;
@@ -41,9 +43,17 @@ export class HomeComponent implements OnInit {
     });
     this.contentService.getTopServices().subscribe(data => {
       this.services = data;
+      this.services2 = [];
+      for(let index = 0;index < this.services.length;index++) {
+        this.services2.push(this.services[index].payload.doc.data());
+      }
     });
     this.contentService.getTopPortfolio().subscribe(data => {
       this.portofolio = data;
+      this.portofolio2 = [];
+      for(let index = 0;index < this.portofolio.length;index++) {
+        this.portofolio2.push(this.portofolio[index].payload.doc.data());
+      }
     });
   }
 

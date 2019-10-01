@@ -32,7 +32,7 @@
                     <fa-icon [icon]="arrow" class="col col-md-2" [routerLink]="'/services'" style="cursor: pointer;"></fa-icon>
                 </div>
               </div>
-             <div class="col col-md-3" *ngFor="let service of services">
+             <div class="col col-md-3" *ngFor="let service of services2">
                  <!-- effect -->
 
                 <figure class="box" [routerLink]="'/services'">
@@ -102,7 +102,7 @@
 
       <div class="container">
        <div class="row">
-         <div class="col col-md-4" *ngFor="let item of portofolio" style="cursor: pointer;" [routerLink]="'/portfolio'">
+         <div class="col col-md-4" *ngFor="let item of portofolio2" style="cursor: pointer;" [routerLink]="'/portfolio'">
            <div class="inner-works">
              <div class="img-works">
                <img src="{{item.image}}">
