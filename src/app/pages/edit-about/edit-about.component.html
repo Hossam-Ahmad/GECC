@@ -1,0 +1,68 @@
+<div class="main-content">
+        <div class="container-fluid">
+           <!-- company -->
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title ">الشركة</h4>
+                                <p class="card-category"> قائمه ببيانات الشركة</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                            <th>
+                                                تعديل
+                                            </th>
+                                            <th>
+                                                بالانجليزية
+                                            </th>
+                                            <th>
+                                               بالعربي
+                                            </th>
+                                            <th>
+                                                النوع
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>   
+                                                <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                            border-color: #4c7b9d;" (click)="edit('عن الشركة','about_En',about?.about_En,'abour_Ar',about?.abour_Ar)">تعديل</button></td>
+                                                <td>{{about?.about_En}}</td>
+                                                <td>{{about?.abour_Ar}}</td>
+                                                <td>عن الشركة</td>
+                                            </tr>
+                                            <tr>   
+                                                <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                                border-color: #4c7b9d;" (click)="edit('رسالتنا','our_message_En',about?.our_message_En,'our_message_Ar',about?.our_message_Ar)">تعديل</button></td>
+                                                <td>{{about?.our_message_En}}</td>
+                                                <td>{{about?.our_message_Ar}}</td>
+                                                <td>رسالتنا</td>
+                                            </tr>
+                                            <tr>   
+                                                <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                                    border-color: #4c7b9d;" (click)="edit('مهمتنا','our_mission_En',about?.our_mission_En,'our_mission_Ar',about?.our_mission_Ar)">تعديل</button></td>
+                                                <td>{{about?.our_mission_En}}</td>
+                                                <td>{{about?.our_mission_Ar}}</td>
+                                                <td>مهمتنا</td>
+                                            </tr>
+                                            <tr>   
+                                                <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                                        border-color: #4c7b9d;" (click)="edit('رؤيتنا','out_vision_En',about?.out_vision_En,'out_vision_Ar',about?.out_vision_Ar)">تعديل</button></td>
+                                                <td>{{about?.out_vision_En}}</td>
+                                                <td>{{about?.out_vision_Ar}}</td>
+                                                <td>رؤيتنا</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- End company -->
+        </div>
+</div>
+<app-dasboard-footer></app-dasboard-footer>

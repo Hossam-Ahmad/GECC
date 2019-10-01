@@ -1,0 +1,40 @@
+<div class="main-content">
+        <div class="container-fluid">
+
+            <!-- Slider -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title ">العملاء</h4>
+                            <p class="card-category"> قائمه شعارات العملاء </p>
+                        </div>
+                        <div class="card-body">
+                            <app-upload-image (myEvent)="onUploaded($event)"></app-upload-image>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                        <th>
+                                            حذف
+                                        </th>
+                                        <th>
+                                            الصورة
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let client of clients2;let i = index;">
+                                            <td><button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="remove(i)">حذف</button></td>
+                                            <td><img style="width: 100px;" src="{{client.image}}"></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End slider -->
+        </div>
+    </div>
+    <app-dasboard-footer></app-dasboard-footer>

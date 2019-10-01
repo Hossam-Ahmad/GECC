@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">تعديل</h4>
+                        <p class="card-category">الاعمال  بالعربية و الانجليزية</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                     <textarea matInput placeholder="عنوان عربي" style="direction: rtl;text-align: right;" [(ngModel)]="title_Ar" [ngModelOptions]="{standalone: true}" value="{{title_Ar}}"></textarea>
+                                   </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                      <mat-form-field class="example-full-width">
+                                         <textarea matInput placeholder="عنوان انجليزي" style="direction: rtl;text-align: right;" [(ngModel)]="title_En" [ngModelOptions]="{standalone: true}" value="{{title_En}}"></textarea>
+                                       </mat-form-field>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                      <mat-form-field class="example-full-width">
+                                         <textarea matInput placeholder="عنوان فرعي عربي" style="direction: rtl;text-align: right;" [(ngModel)]="tag_Ar" [ngModelOptions]="{standalone: true}" value="{{tag_Ar}}"></textarea>
+                                       </mat-form-field>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                     <textarea matInput placeholder="عنوان فرعي انجليزي" style="direction: rtl;text-align: right;" [(ngModel)]="tag_En" [ngModelOptions]="{standalone: true}" value="{{tag_En}}"></textarea>
+                                   </mat-form-field>
+                                </div>
+                            </div>
+                            <p class="card-category">الصورة الاولي</p>
+                            <app-upload-image [image]="image1" (myEvent)="onUploaded1($event)"></app-upload-image>
+                            <p class="card-category">الصورة الثانيه</p>
+                            <app-upload-image [image]="image2" (myEvent)="onUploaded2($event)"></app-upload-image>
+                            <p class="card-category">الصورة الثالثه</p>
+                            <app-upload-image [image]="image3" (myEvent)="onUploaded3($event)"></app-upload-image>
+                            <p class="card-category">الصورة الرابعه</p>
+                            <app-upload-image [image]="image4" (myEvent)="onUploaded4($event)"></app-upload-image>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="update()">تعديل</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

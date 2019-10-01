@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">تعديل</h4>
+                        <p class="card-category">الخدمات بالعربية و الانجليزية</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                     <textarea matInput placeholder="عنوان عربي" style="direction: rtl;text-align: right;" [(ngModel)]="title_Ar" [ngModelOptions]="{standalone: true}" value="{{title_Ar}}"></textarea>
+                                   </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                      <mat-form-field class="example-full-width">
+                                         <textarea matInput placeholder="عنوان انجليزي" style="direction: rtl;text-align: right;" [(ngModel)]="title_En" [ngModelOptions]="{standalone: true}" value="{{title_En}}"></textarea>
+                                       </mat-form-field>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-12">
+                                      <mat-form-field class="example-full-width">
+                                         <textarea matInput placeholder="تفاصيل عربي" style="direction: rtl;text-align: right;" [(ngModel)]="details_Ar" [ngModelOptions]="{standalone: true}" value="{{details_Ar}}"></textarea>
+                                       </mat-form-field>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <mat-form-field class="example-full-width">
+                                     <textarea matInput placeholder="تفاصيل انجليزي" style="direction: rtl;text-align: right;" [(ngModel)]="details_En" [ngModelOptions]="{standalone: true}" value="{{details_En}}"></textarea>
+                                   </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="update()">تعديل</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

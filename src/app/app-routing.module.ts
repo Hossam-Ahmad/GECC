@@ -11,6 +11,19 @@ import { AboutComponent } from './pages/about/about.component';
 import { ClientComponent } from './pages/client/client.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { PortoflioComponent } from './pages/portoflio/portoflio.component';
+import { EditHomeComponent } from './pages/edit-home/edit-home.component';
+import { EditAboutComponent } from './pages/edit-about/edit-about.component';
+import { EditClientsComponent } from './pages/edit-clients/edit-clients.component';
+import { EditServicesComponent } from './pages/edit-services/edit-services.component';
+import { EditPortfolioComponent } from './pages/edit-portfolio/edit-portfolio.component';
+import { UpdateAboutComponent } from './pages/update-about/update-about.component';
+import { UpdateServicesComponent } from './pages/update-services/update-services.component';
+import { UpdatePortfolioComponent } from './pages/update-portfolio/update-portfolio.component';
+import { UpdateCompanyComponent } from './pages/update-company/update-company.component';
+import { UpdateFeaturesComponent } from './pages/update-features/update-features.component';
+import { UpdateTopPortfolioComponent } from './pages/update-top-portfolio/update-top-portfolio.component';
+import { UpdateTopServicesComponent } from './pages/update-top-services/update-top-services.component';
+import { UpdateSliderComponent } from './pages/update-slider/update-slider.component';
 
 
 const routes: Routes = [
@@ -41,6 +54,71 @@ const routes: Routes = [
       {
         path: 'edit_page',
         component: EditPageComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'edit_home',
+        component: EditHomeComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'edit_about',
+        component: EditAboutComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_about',
+        component: UpdateAboutComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_slider',
+        component: UpdateSliderComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_top_services',
+        component: UpdateTopServicesComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_top_portfolio',
+        component: UpdateTopPortfolioComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_features',
+        component: UpdateFeaturesComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_company',
+        component: UpdateCompanyComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_services',
+        component: UpdateServicesComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_portfolio',
+        component: UpdatePortfolioComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'edit_clients',
+        component: EditClientsComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'edit_services',
+        component: EditServicesComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'edit_portfolio',
+        component: EditPortfolioComponent,
         canActivate: [AuthService]
       },
       {

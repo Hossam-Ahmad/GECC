@@ -8,58 +8,33 @@
                 </div>
         </section>
     
-        <section class="portfolio">
+        <section class="portfolio" *ngFor="let item of data2">
             <div class="container">
                 <div class="titlePicture">
-                    <span>تنقية المياه</span>
+                    <span>{{languageService.getCurrentLanguage() == 'ar' ? item?.tag_Ar : item?.tag_En }}</span>
                 </div>
                 <div class="detailsOfWorks">
                     <div class="row" style="text-align: center">
-                        <div class="col">
+                        <div class="col" *ngIf="item?.image2">
                             <div class="worksInner">
-                                <img src="../../../assets/images/ourWorks.jpg">
+                                <img src="{{item.image2}}">
                             </div>
                         </div>
-                        <div class="col">
-                                <div class="worksInner">
-                                    <img src="../../../assets/images/ourWorks.jpg">
-                                </div>
+                        <div class="col" *ngIf="item?.image3">
+                            <div class="worksInner">
+                                <img src="{{item.image3}}">
                             </div>
-                            <div class="col">
-                                    <div class="worksInner">
-                                        <img src="../../../assets/images/ourWorks.jpg">
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="col" *ngIf="item?.image4">
+                            <div class="worksInner">
+                                <img src="{{item.image4}}">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="portfolio">
-                <div class="container">
-                    <div class="titlePicture">
-                        <span>تنقية المياه</span>
-                    </div>
-                    <div class="detailsOfWorks">
-                        <div class="row" style="text-align: center">
-                            <div class="col">
-                                <div class="worksInner">
-                                    <img src="../../../assets/images/ourWorks.jpg">
-                                </div>
-                            </div>
-                            <div class="col">
-                                    <div class="worksInner">
-                                        <img src="../../../assets/images/ourWorks.jpg">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                        <div class="worksInner">
-                                            <img src="../../../assets/images/ourWorks.jpg">
-                                        </div>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
     </section>
     
     <app-footer></app-footer>

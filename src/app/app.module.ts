@@ -32,9 +32,32 @@ import { PortoflioComponent } from './pages/portoflio/portoflio.component';
 import { UpperComponentComponent } from './components/upper-component/upper-component.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LanguageService } from './services/language.service';
 import { DashboardNavbarComponent } from './components/dashboard-navbar/dashboard-navbar.component';
+import { EditHomeComponent } from './pages/edit-home/edit-home.component';
+import { EditAboutComponent } from './pages/edit-about/edit-about.component';
+import { EditServicesComponent } from './pages/edit-services/edit-services.component';
+import { EditClientsComponent } from './pages/edit-clients/edit-clients.component';
+import { EditPortfolioComponent } from './pages/edit-portfolio/edit-portfolio.component';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { UpdateAboutComponent } from './pages/update-about/update-about.component';
+import { UpdateServicesComponent } from './pages/update-services/update-services.component';
+import { UpdatePortfolioComponent } from './pages/update-portfolio/update-portfolio.component';
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatRippleModule,
+  MatFormFieldModule,
+  MatTooltipModule,
+  MatSelectModule
+} from '@angular/material';
+import { UpdateFeaturesComponent } from './pages/update-features/update-features.component';
+import { UpdateSliderComponent } from './pages/update-slider/update-slider.component';
+import { UpdateTopServicesComponent } from './pages/update-top-services/update-top-services.component';
+import { UpdateTopPortfolioComponent } from './pages/update-top-portfolio/update-top-portfolio.component';
+import { UpdateCompanyComponent } from './pages/update-company/update-company.component';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,7 +68,7 @@ const firebaseConfig = {
   authDomain: 'gecc-252518.firebaseapp.com',
   databaseURL: 'https://gecc-252518.firebaseio.com',
   projectId: 'gecc-252518',
-  storageBucket: '',
+  storageBucket: 'gs://gecc-252518.appspot.com/',
   messagingSenderId: '1057653798732',
   appId: '1:1057653798732:web:08ec4cb7620407f927c1e9'
 };
@@ -70,12 +93,32 @@ const firebaseConfig = {
     PortoflioComponent,
     UpperComponentComponent,
     DashboardNavbarComponent,
+    EditHomeComponent,
+    EditAboutComponent,
+    EditServicesComponent,
+    EditClientsComponent,
+    EditPortfolioComponent,
+    UploadImageComponent,
+    UpdateAboutComponent,
+    UpdateServicesComponent,
+    UpdatePortfolioComponent,
+    UpdateFeaturesComponent,
+    UpdateSliderComponent,
+    UpdateTopServicesComponent,
+    UpdateTopPortfolioComponent,
+    UpdateCompanyComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatRippleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTooltipModule,
     NgbModule,
     NgbdModalComponentModule,
     HttpClientModule,
@@ -85,6 +128,7 @@ const firebaseConfig = {
     MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -1,0 +1,78 @@
+<div class="main-content">
+        <div class="container-fluid">
+
+            <!-- Slider -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title ">الأعمال</h4>
+                            <p class="card-category"> قائمه الأعمال بالصور </p>
+                        </div>
+                        <div class="card-body">
+                                <!-- <button mat-raised-button type="submit" class="btn btn-primary btn-round" style="background-color: #4b799f;
+                                border-color: #4a77a3;
+                                width: 10em;
+                                margin: auto;
+                                display: block;" (click)="showModal()">إضافه</button> -->
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                        <th>
+                                            حذف
+                                        </th>
+                                        <th>
+                                            تعديل
+                                        </th>
+                                        <th>
+                                                الصورة الرابعه
+                                        </th>
+                                        <th>
+                                                الصورة الثالثه
+                                        </th>
+                                        <th>
+                                                الصورة الثانيه
+                                        </th>
+                                        <th>
+                                            الصورة الاولى
+                                        </th>
+                                        <th>
+                                            عنوان فرعي انجليزي
+                                        </th>
+                                        <th>
+                                            عنوان فرعي عربي
+                                        </th>
+                                        <th>
+                                            عنوان انجليزي
+                                        </th>
+                                        <th>
+                                            عنوان عربي
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of portfolio2;let i = index;">
+                                            <td><button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="remove(i)">حذف</button></td>
+                                            <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                border-color: #4c7b9d;" (click)="update(i)">تعديل</button></td>
+                                            <td><img style="width: 200px;" src="{{item?.image4}}"></td>
+                                            <td><img style="width: 200px;" src="{{item?.image3}}"></td>
+                                            <td><img style="width: 200px;" src="{{item?.image2}}"></td>
+                                            <td><img style="width: 200px;" src="{{item?.image1}}"></td>
+                                            <td>{{item.tag_En}}</td>
+                                            <td>{{item.tag_Ar}}</td>
+                                            <td>{{item.title_En}}</td>
+                                            <td>{{item.title_Ar}}</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End slider -->
+
+        </div>
+    </div>
+    <app-dasboard-footer></app-dasboard-footer>

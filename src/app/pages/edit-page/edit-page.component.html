@@ -1,1 +1,285 @@
-<p>edit-page works!</p>
+        <div class="main-content">
+            <div class="container-fluid">
+
+                <!-- Slider -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title ">السلايدر</h4>
+                                <p class="card-category"> قائمه الصور مع العنواين</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                            <th>
+                                                حذف
+                                            </th>
+                                            <th>
+                                                تعديل
+                                            </th>
+                                            <th>
+                                                الصورة
+                                            </th>
+                                            <th>
+                                                عنوان فرعي انجليزي
+                                            </th>
+                                            <th>
+                                                عنوان فرعي عربي
+                                            </th>
+                                            <th>
+                                                عنوان انجليزي
+                                            </th>
+                                            <th>
+                                                عنوان عربي
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let slider of sliders;let i = index;">
+                                                <td><button mat-raised-button type="submit" class="btn btn-danger pull-right">حذف</button></td>
+                                                <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                    border-color: #4c7b9d;">تعديل</button></td>
+                                                <td><img style="width: 200px;" src="{{slider.image}}"></td>
+                                                <td>{{slider.subtitle_En}}</td>
+                                                <td>{{slider.subtitle_Ar}}</td>
+                                                <td>{{slider.title_En}}</td>
+                                                <td>{{slider.title_Ar}}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End slider -->
+
+                <!-- Features -->
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title ">المميزات</h4>
+                                    <p class="card-category"> قائمه بأفضل اربع مميزات للشركة</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class=" text-primary">
+                                                <th>
+                                                    تعديل
+                                                </th>
+                                                <th>
+                                                    عنوان فرعي انجليزي
+                                                </th>
+                                                <th>
+                                                    عنوان فرعي عربي
+                                                </th>
+                                                <th>
+                                                    عنوان انجليزي
+                                                </th>
+                                                <th>
+                                                    عنوان عربي
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let feature of features;let i = index;">   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                        border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td>{{feature.subtitle_En}}</td>
+                                                    <td>{{feature.subtitle_Ar}}</td>
+                                                    <td>{{feature.title_En}}</td>
+                                                    <td>{{feature.title_Ar}}</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- End features -->
+
+
+                <!-- Services -->
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title ">الخدمات</h4>
+                                    <p class="card-category"> قائمه بأفضل ثلاث خدمات للشركة</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class=" text-primary">
+                                                <th>
+                                                    تعديل
+                                                </th>
+                                                <th>
+                                                    الصورة
+                                                </th>
+                                                <th>
+                                                    عنوان انجليزي
+                                                </th>
+                                                <th>
+                                                    عنوان عربي
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let service of services;let i = index;">   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                        border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td><img style="width: 200px;" src="{{service.image}}"></td>
+                                                    <td>{{service.title_En}}</td>
+                                                    <td>{{service.title_Ar}}</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- End services -->
+
+
+
+                <!-- Portfolio -->
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title ">الأعمال</h4>
+                                    <p class="card-category"> قائمه بأفضل ثلاث أعمال للشركة</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class=" text-primary">
+                                                <th>
+                                                    تعديل
+                                                </th>
+                                                <th>
+                                                    الصورة
+                                                </th>
+                                                <th>
+                                                    عنوان فرعي صغير انجليزي
+                                                </th>
+                                                <th>
+                                                    عنوان فرعي صغير عربي
+                                                </th>
+                                                <th>
+                                                    عنوان انجليزي
+                                                </th>
+                                                <th>
+                                                    عنوان عربي
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let item of portfolio;let i = index;">   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                        border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td><img style="width: 200px;" src="{{item.image}}"></td>
+                                                    <td>{{item.tag_En}}</td>
+                                                    <td>{{item.tag_Ar}}</td>
+                                                    <td>{{item.title_En}}</td>
+                                                    <td>{{item.title_Ar}}</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- End portfolio -->
+
+
+                <!-- company -->
+                <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title ">الشركة</h4>
+                                    <p class="card-category"> قائمه ببيانات الشركة</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class=" text-primary">
+                                                <th>
+                                                    تعديل
+                                                </th>
+                                                <th>
+                                                    بالعربي
+                                                </th>
+                                                <th>
+                                                   بالانجليزية
+                                                </th>
+                                                <th>
+                                                    النوع
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                        border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td>{{company?.address_Ar}}</td>
+                                                    <td>{{company?.address_En}}</td>
+                                                    <td>العنوان</td>
+                                                </tr>
+                                                <tr>   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                            border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td></td>
+                                                    <td>{{company?.email}}</td>
+                                                    <td>الايميل</td>
+                                                </tr>
+                                                <tr>   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                                border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td></td>
+                                                    <td>{{company?.tel}}</td>
+                                                    <td>التليفون</td>
+                                                </tr>
+                                                <tr>   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                                    border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td></td>
+                                                    <td>{{company?.facebook}}</td>
+                                                    <td>الفيسبوك</td>
+                                                </tr>
+                                                <tr>   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                                        border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td></td>
+                                                    <td>{{company?.twitter}}</td>
+                                                    <td>تويتر</td>
+                                                </tr>
+                                                <tr>   
+                                                    <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                                                            border-color: #4c7b9d;">تعديل</button></td>
+                                                    <td></td>
+                                                    <td>{{company?.instagram}}</td>
+                                                    <td>انستجرام</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- End company -->
+
+
+            </div>
+          </div>
+          <app-dasboard-footer></app-dasboard-footer>

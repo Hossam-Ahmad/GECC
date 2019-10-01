@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">اختار ملف صورة لرفعه</h5>
+        <img src="{{image}}" style="display: block;margin: auto;" />
+        <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+        <br><br>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>

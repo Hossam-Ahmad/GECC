@@ -1,117 +1,39 @@
 <app-upper-component></app-upper-component>
 <section class="services-content" style="background-color: #fff">
     <div class="container">
-        <div class="every-service">
-       <div class="row">
+
+    <div class="every-service" *ngFor="let service of services;let i = index;">
+       <div class="row" *ngIf="i%2 == 0">
            <div class="col col-12 col-md-3">
                <div class="service-picture">
-                   <img src="../../../assets/images/servisePic.png" style="width: 100%">
+                   <img src="{{images[i]}}" style="width: 100%">
                </div>
             </div>
             <div class="col col-md-9">
                    <div class="service-detail">
-                        <h3>خدمات نقل مخلفات المواد الخطرة</h3>
+                      <h3>{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
                       <p>
-                            تمتلك شركة التحكم البيئي العالمية المحدودة ترخيص وتصريح لنقل جيمع مخلفات المواد
-                            الصناعية الخطرة بطريقة بيئية مناسبة .
-                           وتقدم شركة التحكم البيئي العالمية المحدودة أنواع متنوعة من
-                            حلول وخيارات لنقل المخلفات مثل :-
-
-                           • نقل مخلفات السوائل والمواد الصلبة ومياة المجاري والرواسب الطينية من خلال البراميل
-                           والشحنات الغير معبأة.
-                           • النقل المباشر من المرفق للمكان الذي يتم التخلص فيه من المخلفات.
-
-                           وذلك باستخدام المعدات الخاصة بشركة التحكم البيئي العالمية المحدودة مثل المركبات والخزانات والشاحنات الكبيرة وأوعية الشاحنات والناقلين
-                            والمعدات المركبة بطبيعتها مع اتخاذ أقصى درجات الاحتياط للامان الشخصي والمجتمعي والبيئي .
+                        {{languageService.getCurrentLanguage() == 'ar' ? service?.details_Ar : service?.details_En }}
                       </p>
                </div>
            </div>
-        </div>
-    </div>
-
-    <div class="every-service">
-   <div class="row">
-        <div class="col col-md-9">
-                <div class="service-detail">
-                        <h3>خدمات نقل مخلفات المواد الخطرة</h3>
-                   <p>
-                         تمتلك شركة التحكم البيئي العالمية المحدودة ترخيص وتصريح لنقل جيمع مخلفات المواد
-                         الصناعية الخطرة بطريقة بيئية مناسبة .
-                        وتقدم شركة التحكم البيئي العالمية المحدودة أنواع متنوعة من
-                         حلول وخيارات لنقل المخلفات مثل :-
-
-                        • نقل مخلفات السوائل والمواد الصلبة ومياة المجاري والرواسب الطينية من خلال البراميل
-                        والشحنات الغير معبأة.
-                        • النقل المباشر من المرفق للمكان الذي يتم التخلص فيه من المخلفات.
-
-                        وذلك باستخدام المعدات الخاصة بشركة التحكم البيئي العالمية المحدودة مثل المركبات والخزانات والشاحنات الكبيرة وأوعية الشاحنات والناقلين
-                         والمعدات المركبة بطبيعتها مع اتخاذ أقصى درجات الاحتياط للامان الشخصي والمجتمعي والبيئي .
-                   </p>
-            </div>
-        </div>
-       <div class="col col-12 col-md-3">
-           <div class="service-picture">
-               <img src="../../../assets/images/services.png" style="width: 100%">
-           </div>
-        </div>
-    </div>
-</div>
-
-<div class="every-service">
-        <div class="row">
-            <div class="col col-12 col-md-3">
-                <div class="service-picture">
-                    <img src="../../../assets/images/servPic2.png" style="width: 100%">
-                </div>
-             </div>
-             <div class="col col-md-9">
-                    <div class="service-detail">
-                         <h3>خدمات نقل مخلفات المواد الخطرة</h3>
-                       <p>
-                             تمتلك شركة التحكم البيئي العالمية المحدودة ترخيص وتصريح لنقل جيمع مخلفات المواد
-                             الصناعية الخطرة بطريقة بيئية مناسبة .
-                            وتقدم شركة التحكم البيئي العالمية المحدودة أنواع متنوعة من
-                             حلول وخيارات لنقل المخلفات مثل :-
-
-                            • نقل مخلفات السوائل والمواد الصلبة ومياة المجاري والرواسب الطينية من خلال البراميل
-                            والشحنات الغير معبأة.
-                            • النقل المباشر من المرفق للمكان الذي يتم التخلص فيه من المخلفات.
-
-                            وذلك باستخدام المعدات الخاصة بشركة التحكم البيئي العالمية المحدودة مثل المركبات والخزانات والشاحنات الكبيرة وأوعية الشاحنات والناقلين
-                             والمعدات المركبة بطبيعتها مع اتخاذ أقصى درجات الاحتياط للامان الشخصي والمجتمعي والبيئي .
-                       </p>
-                </div>
-            </div>
-         </div>
-     </div>
-
-     <div class="every-service">
-    <div class="row">
+       </div>
+       <div class="row" *ngIf="i%2 != 0">
             <div class="col col-md-9">
-                 <div class="service-detail">
-                         <h3>خدمات نقل مخلفات المواد الخطرة</h3>
-                    <p>
-                          تمتلك شركة التحكم البيئي العالمية المحدودة ترخيص وتصريح لنقل جيمع مخلفات المواد
-                          الصناعية الخطرة بطريقة بيئية مناسبة .
-                         وتقدم شركة التحكم البيئي العالمية المحدودة أنواع متنوعة من
-                          حلول وخيارات لنقل المخلفات مثل :-
-
-                         • نقل مخلفات السوائل والمواد الصلبة ومياة المجاري والرواسب الطينية من خلال البراميل
-                         والشحنات الغير معبأة.
-                         • النقل المباشر من المرفق للمكان الذي يتم التخلص فيه من المخلفات.
-
-                         وذلك باستخدام المعدات الخاصة بشركة التحكم البيئي العالمية المحدودة مثل المركبات والخزانات والشاحنات الكبيرة وأوعية الشاحنات والناقلين
-                          والمعدات المركبة بطبيعتها مع اتخاذ أقصى درجات الاحتياط للامان الشخصي والمجتمعي والبيئي .
-                    </p>
-             </div>
-         </div>
-        <div class="col col-12 col-md-3">
-            <div class="service-picture">
-                <img src="../../../assets/images/servPic3.png" style="width: 100%">
+                    <div class="service-detail">
+                        <h3>{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
+                        <p>
+                            {{languageService.getCurrentLanguage() == 'ar' ? service?.details_Ar : service?.details_En }}
+                        </p>
+                </div>
             </div>
-         </div>
-     </div>
- </div>
+           <div class="col col-12 col-md-3">
+               <div class="service-picture">
+                   <img src="{{images[i]}}" style="width: 100%">
+               </div>
+            </div>
+        </div>
+    </div>
 
     </div>
 </section>

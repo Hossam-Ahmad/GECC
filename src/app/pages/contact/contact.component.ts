@@ -8,12 +8,14 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactComponent implements OnInit {
   public messages;
-  constructor(public contactService: ContactService) { }
-
-  ngOnInit() {
+  constructor(public contactService: ContactService) {
     this.contactService.getMessages().subscribe(data => {
       this.messages = data;
     });
+   }
+
+  ngOnInit() {
+    
   }
 
 }

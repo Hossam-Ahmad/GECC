@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   arrow = faArrowCircleLeft;
   myInnerHeight: any;
   public features = [];
+  public features2 = [];
   public services = [];
   public portofolio = [];
   public company = null;
@@ -30,11 +31,15 @@ export class HomeComponent implements OnInit {
   initData() {
     this.contentService.getFeatures().subscribe(data => {
       this.features = data;
+      this.features2 = [];
+      for(let index = 0;index < this.features.length;index++) {
+        this.features2.push(this.features[index].payload.doc.data());
+      }
     });
     this.contentService.getCompany().subscribe(data => {
       this.company = data[0];
     });
-    this.contentService.getTopSerices().subscribe(data => {
+    this.contentService.getTopServices().subscribe(data => {
       this.services = data;
     });
     this.contentService.getTopPortfolio().subscribe(data => {
