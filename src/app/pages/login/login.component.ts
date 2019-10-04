@@ -29,12 +29,20 @@ export class LoginComponent implements OnInit {
           this.authService.setToken(result[0]['token']);
           this.router.navigateByUrl('/cpanel/dashboard');
         } else {
-          alert('Wrong email or password');
+          alert('هناك خطأ في الايميل او كلمة المرور');
         }
       });
     } else {
-      alert('Enter email and password');
+      alert('ادخل كل البيانات');
     }
+  }
+
+  change() {
+    this.router.navigateByUrl('/cpanel/change');
+  }
+
+  forget() {
+    this.router.navigateByUrl('/cpanel/forget');
   }
 
 }

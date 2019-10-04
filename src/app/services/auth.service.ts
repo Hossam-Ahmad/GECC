@@ -15,14 +15,14 @@ export class AuthService implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         if (this.isAuthenticated()) {
-          if (route.url.toString() === 'login') {
+          if (route.url.toString() === 'login' || route.url.toString() === 'change' || route.url.toString() === 'forget') {
             this.router.navigate(['/cpanel/dashboard']);
             return false;
           } else {
             return true;
           }
         } else {
-          if (route.url.toString() !== 'login') {
+          if (route.url.toString() !== 'login' && route.url.toString() !== 'change' && route.url.toString() !== 'forget') {
             this.router.navigate(['/cpanel/login']);
             return false;
           } else {
@@ -41,6 +41,14 @@ export class AuthService implements CanActivate {
 
     login() {
       return this.fs.collection('data').valueChanges();
+    }
+
+    changeCredentials(newEmail, newPassword) {
+      this.fs.collection('data')
+        .doc('Al5B5K6xsHjc2Kz5yp8V').update({
+            admin_password : newPassword,
+            admin_username : newEmail,
+        });
     }
 
     logout() {

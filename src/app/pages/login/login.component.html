@@ -7,5 +7,10 @@
         <input type="password" placeholder="Password" class="login-input" [(ngModel)]="password" required>
         <br>
         <button class="login-btn" (click)="login()"><span>تسجيل الدخول</span></button>
+        <p class="spanStyle">
+            <span (click)="change()" style="cursor: pointer;">تغيير البيانات</span>
+            <span>|</span>
+            <span (click)="forget()" style="cursor: pointer;">نسيت كلمة المرور ؟</span>
+        </p>
     </div>
 </div>

@@ -20,6 +20,12 @@ export class HomeComponent implements OnInit {
   public services2 = [];
   public portofolio = [];
   public portofolio2 = [];
+  public imgFeatures = [
+    '../../../assets/images/icon1.png',
+    '../../../assets/images/icon2.png',
+    '../../../assets/images/icon3.png',
+    '../../../assets/images/icon4.png',
+  ];
   public company = null;
   public senderName = ''; public senderEmail = ''; public senderMessage = '';
   public innerWidth = 800;

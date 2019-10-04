@@ -14,7 +14,11 @@ export class CpanelComponent implements OnInit {
   }
 
   isLogin() {
-    return this.router.url === '/cpanel/login';
+    if ( this.router.url === '/cpanel/login' || this.router.url === '/cpanel/change' || this.router.url === '/cpanel/forget') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   isMobile() {

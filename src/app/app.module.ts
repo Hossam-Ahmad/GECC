@@ -58,6 +58,8 @@ import { UpdateSliderComponent } from './pages/update-slider/update-slider.compo
 import { UpdateTopServicesComponent } from './pages/update-top-services/update-top-services.component';
 import { UpdateTopPortfolioComponent } from './pages/update-top-portfolio/update-top-portfolio.component';
 import { UpdateCompanyComponent } from './pages/update-company/update-company.component';
+import { ChangeComponent } from './pages/change/change.component';
+import { ForgetComponent } from './pages/forget/forget.component';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -107,6 +109,8 @@ const firebaseConfig = {
     UpdateTopServicesComponent,
     UpdateTopPortfolioComponent,
     UpdateCompanyComponent,
+    ChangeComponent,
+    ForgetComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

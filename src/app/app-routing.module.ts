@@ -24,6 +24,8 @@ import { UpdateFeaturesComponent } from './pages/update-features/update-features
 import { UpdateTopPortfolioComponent } from './pages/update-top-portfolio/update-top-portfolio.component';
 import { UpdateTopServicesComponent } from './pages/update-top-services/update-top-services.component';
 import { UpdateSliderComponent } from './pages/update-slider/update-slider.component';
+import { ChangeComponent } from './pages/change/change.component';
+import { ForgetComponent } from './pages/forget/forget.component';
 
 
 const routes: Routes = [
@@ -44,6 +46,16 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'change',
+        component: ChangeComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'forget',
+        component: ForgetComponent,
         canActivate: [AuthService]
       },
       {

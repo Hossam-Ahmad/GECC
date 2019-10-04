@@ -23,6 +23,10 @@
              font-size: 2em;
 
          }
+         .imgFeature{
+            max-width: 75px;
+            max-height: 40px;
+         }
          p{
              font-family: cairo-bold;
              padding-top: 1em;
@@ -146,7 +150,7 @@
 	position: relative;
 	text-align: right;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 .box *,	.box *:before,	.box *:after {
 	-webkit-box-sizing: border-box;
