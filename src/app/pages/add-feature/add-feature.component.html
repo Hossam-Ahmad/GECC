@@ -1,0 +1,50 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">إضافه</h4>
+                            <p class="card-category">المميزات بالعربية و الانجليزية</p>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <mat-form-field class="example-full-width">
+                                         <textarea matInput placeholder="عنوان عربي" style="direction: rtl;text-align: right;" [(ngModel)]="title_Ar" [ngModelOptions]="{standalone: true}" value="{{title_Ar}}"></textarea>
+                                       </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-12">
+                                          <mat-form-field class="example-full-width">
+                                             <textarea matInput placeholder="عنوان انجليزي" style="direction: rtl;text-align: right;" [(ngModel)]="title_En" [ngModelOptions]="{standalone: true}" value="{{title_En}}"></textarea>
+                                           </mat-form-field>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-12">
+                                          <mat-form-field class="example-full-width">
+                                             <textarea matInput placeholder="عنوان فرعي عربي" style="direction: rtl;text-align: right;" [(ngModel)]="subtitle_Ar" [ngModelOptions]="{standalone: true}" value="{{subtitle_Ar}}"></textarea>
+                                           </mat-form-field>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <mat-form-field class="example-full-width">
+                                         <textarea matInput placeholder="عنوان فرعي انجليزي" style="direction: rtl;text-align: right;" [(ngModel)]="subtitle_En" [ngModelOptions]="{standalone: true}" value="{{subtitle_En}}"></textarea>
+                                       </mat-form-field>
+                                    </div>
+                                </div>
+                                <p class="card-category">الصورة</p>
+                                <app-upload-image [image]="image" (myEvent)="onUploaded($event)"></app-upload-image>
+                                <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="add()">إضافه</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>

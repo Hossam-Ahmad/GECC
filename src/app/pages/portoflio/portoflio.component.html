@@ -10,7 +10,7 @@
     
         <section class="portfolio" *ngFor="let item of data2">
             <div class="container">
-                <div class="titlePicture">
+                <div class="titlePicture" [ngStyle]="{ 'background-image': 'url(' + item.image1 + ')'}" >
                     <span>{{languageService.getCurrentLanguage() == 'ar' ? item?.tag_Ar : item?.tag_En }}</span>
                 </div>
                 <div class="detailsOfWorks">

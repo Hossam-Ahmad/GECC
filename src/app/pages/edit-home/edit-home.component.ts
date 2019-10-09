@@ -98,7 +98,16 @@ export class EditHomeComponent implements OnInit {
       title_Ar: this.features2[index].title_Ar,
       title_En: this.features2[index].title_En,
       subtitle_Ar: this.features2[index].subtitle_Ar,
-      subtitle_En: this.features2[index].subtitle_En } });
+      subtitle_En: this.features2[index].subtitle_En,
+      image: this.features2[index].image } });
+  }
+
+  addFeature() {
+    this.router.navigateByUrl('/cpanel/add_features');
+  }
+
+  removeFeatures(index) {
+    this.contentService.removeFeatures(this.features[index].payload.doc.id);
   }
 
   updateCompany(Title, KeyEn, ValueEn, KeyAr, ValueAr) {

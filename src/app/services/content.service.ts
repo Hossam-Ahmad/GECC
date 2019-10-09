@@ -39,13 +39,28 @@ export class ContentService {
         return this.fs.collection('top-features').snapshotChanges();
     }
 
+    removeFeatures(docId) {
+        this.fs.collection('top-features').doc(docId).delete();
+    }
+
+    addFeature(data) {
+        this.fs.collection('top-features').add({
+            title_Ar: data.title_Ar,
+            subtitle_Ar: data.subtitle_Ar,
+            title_En: data.title_En,
+            subtitle_En: data.subtitle_En,
+            image: data.image,
+        });
+    }
+
     updateFeatures(docId, data) {
         this.fs.collection('top-features')
         .doc(docId).update({
             title_Ar: data.title_Ar,
             subtitle_Ar: data.subtitle_Ar,
             title_En: data.title_En,
-            subtitle_En: data.subtitle_En
+            subtitle_En: data.subtitle_En,
+            image: data.image,
         });
     }
 
@@ -78,6 +93,17 @@ export class ContentService {
             details_Ar : data.details_Ar,
             details_En : data.details_En,
         });
+    }
+    addServices(data) {
+        this.fs.collection('services').add({
+            title_Ar : data.title_Ar,
+            title_En : data.title_En,
+            details_Ar : data.details_Ar,
+            details_En : data.details_En,
+        });
+    }
+    removeService(docId) {
+        this.fs.collection('services').doc(docId).delete();
     }
 
     getClients() {

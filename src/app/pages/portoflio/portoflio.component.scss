@@ -15,7 +15,8 @@
 }
 .portfolio{ margin: 5em 0 0;
     .titlePicture{
-        background: url(../../../assets/images/ourWorks.jpg) no-repeat no-repeat center;
+        background-repeat: no-repeat no-repeat;
+        background-position: center;
         background-size: cover;
         height: 20em;
         width: 80%;

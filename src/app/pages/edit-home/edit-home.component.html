@@ -62,14 +62,22 @@
                         <div class="card">
                             <div class="card-header card-header-danger">
                                 <h4 class="card-title ">المميزات</h4>
-                                <p class="card-category"> قائمه بأفضل اربع مميزات للشركة</p>
+                                <p class="card-category"> قائمه بأفضل مميزات للشركة</p>
                             </div>
                             <div class="card-body">
+                                <button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                    border-color: #4c7b9d;margin: auto;display: block;"(click)="addFeature()">اضافه</button>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead class=" text-primary">
                                             <th>
+                                                حذف
+                                            </th>
+                                            <th>
                                                 تعديل
+                                            </th>
+                                            <th>
+                                                صورة
                                             </th>
                                             <th>
                                                 عنوان فرعي انجليزي
@@ -86,8 +94,10 @@
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let feature of features2;let i = index;">   
+                                                <td><button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="removeFeatures(i)">حذف</button></td>
                                                 <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
                                                     border-color: #4c7b9d;"(click)="updateFeatures(i)">تعديل</button></td>
+                                                <td><img style="width: 200px;" src="{{feature.image}}"></td>
                                                 <td>{{feature.subtitle_En}}</td>
                                                 <td>{{feature.subtitle_Ar}}</td>
                                                 <td>{{feature.title_En}}</td>

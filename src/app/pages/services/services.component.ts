@@ -21,6 +21,7 @@ export class ServicesComponent implements OnInit {
   constructor(public contentService: ContentService, public languageService: LanguageService) {
     this.contentService.getServices().subscribe(data => {
       this.services = data;
+      this.services2 = [];
       for (let index = 0; index < this.services.length; index++) {
         this.services2.push(this.services[index].payload.doc.data());
       }

@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title">تعديل</h4>
-                        <p class="card-category">الخدمات بالعربية و الانجليزية</p>
+                        <p class="card-category">المميزات بالعربية و الانجليزية</p>
                     </div>
                     <div class="card-body">
                         <form>
@@ -37,6 +37,8 @@
                                    </mat-form-field>
                                 </div>
                             </div>
+                            <p class="card-category">الصورة</p>
+                            <app-upload-image [image]="image" (myEvent)="onUploaded($event)"></app-upload-image>
                             <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="update()">تعديل</button>
                             <div class="clearfix"></div>
                         </form>

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/app/services/content.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-update-features',
-  templateUrl: './update-features.component.html',
-  styleUrls: ['./update-features.component.scss']
+  selector: 'app-add-feature',
+  templateUrl: './add-feature.component.html',
+  styleUrls: ['./add-feature.component.scss']
 })
-export class UpdateFeaturesComponent implements OnInit {
+export class AddFeatureComponent implements OnInit {
 
   public id;
   public title_Ar = '';
@@ -16,26 +16,17 @@ export class UpdateFeaturesComponent implements OnInit {
   public subtitle_En = '';
   public image = '';
 
-  constructor(public contentService: ContentService, public route: ActivatedRoute, public router: Router) {
-    this.route.queryParams.subscribe(params => {
-      console.log(params);
-      this.title_Ar = params['title_Ar'];
-      this.title_En = params['title_En'];
-      this.subtitle_Ar = params['subtitle_Ar'];
-      this.subtitle_En = params['subtitle_En'];
-      this.image = params['image'];
-      this.id = params['id'];
-    });
-   }
+  constructor(public contentService: ContentService, public router: Router) { }
 
   ngOnInit() {
   }
+
 
   onUploaded(url: string) {
     this.image = url;
   }
 
-  update() {
+  add() {
     if (this.title_Ar !== '' && this.title_En !== '' && this.subtitle_Ar !== '' && this.subtitle_En !== '' && this.image !== '') {
       const Update = {};
       Update['title_Ar'] = this.title_Ar;
@@ -43,7 +34,7 @@ export class UpdateFeaturesComponent implements OnInit {
       Update['subtitle_Ar'] = this.subtitle_Ar;
       Update['subtitle_En'] = this.subtitle_En;
       Update['image'] = this.image;
-      this.contentService.updateFeatures(this.id, Update);
+      this.contentService.addFeature(Update);
       this.router.navigateByUrl('/cpanel/edit_home');
     } else {
       alert('ادخل جميع البيانات');

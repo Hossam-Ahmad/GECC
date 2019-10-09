@@ -20,6 +20,7 @@ export class PortoflioComponent implements OnInit {
   initData() {
     this.contentService.getPortfolio().subscribe(data  => {
       this.data = data;
+      this.data2 = [];
       for (let index = 0; index < this.data.length; index++) {
         this.data2.push(this.data[index].payload.doc.data());
       }

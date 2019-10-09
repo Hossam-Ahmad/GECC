@@ -11,9 +11,14 @@
                                 <p class="card-category"> قائمه بخدمات الشركة</p>
                             </div>
                             <div class="card-body">
+                                    <button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
+                                    border-color: #4c7b9d;margin: auto;display: block;"(click)="addService()">اضافه</button>
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead class=" text-primary">
+                                            <th>
+                                                حذف
+                                            </th>
                                             <th>
                                                 تعديل
                                             </th>
@@ -32,6 +37,7 @@
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let service of services2;let i = index;">   
+                                                <td><button mat-raised-button type="submit" class="btn btn-danger pull-right"  (click)="remove(i)">حذف</button></td>
                                                 <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
                                                     border-color: #4c7b9d;" (click)="update(i)">تعديل</button></td>
                                                 <td>{{service.details_En}}</td>

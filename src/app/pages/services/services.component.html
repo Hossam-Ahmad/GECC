@@ -6,7 +6,7 @@
        <div class="row" *ngIf="i%2 == 0">
            <div class="col col-12 col-md-3">
                <div class="service-picture">
-                   <img src="{{images[i]}}" style="width: 100%">
+                   <img src="{{images[i%3]}}" style="width: 100%">
                </div>
             </div>
             <div class="col col-md-9">
@@ -29,7 +29,7 @@
             </div>
            <div class="col col-12 col-md-3">
                <div class="service-picture">
-                   <img src="{{images[i]}}" style="width: 100%">
+                   <img src="{{images[i%3]}}" style="width: 100%">
                </div>
             </div>
         </div>

@@ -29,6 +29,10 @@ export class EditPortfolioComponent implements OnInit {
     });
   }
 
+  addPortfolio() {
+    this.router.navigateByUrl('/cpanel/add_portfolio');
+  }
+
   update(index) {
     this.router.navigate(['/cpanel/update_portfolio'], { queryParams: {
       title_Ar: this.portfolio2[index].title_Ar,

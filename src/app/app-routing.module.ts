@@ -26,6 +26,9 @@ import { UpdateTopServicesComponent } from './pages/update-top-services/update-t
 import { UpdateSliderComponent } from './pages/update-slider/update-slider.component';
 import { ChangeComponent } from './pages/change/change.component';
 import { ForgetComponent } from './pages/forget/forget.component';
+import { AddFeatureComponent } from './pages/add-feature/add-feature.component';
+import { AddServicesComponent } from './pages/add-services/add-services.component';
+import { AddPortfolioComponent } from './pages/add-portfolio/add-portfolio.component';
 
 
 const routes: Routes = [
@@ -104,13 +107,28 @@ const routes: Routes = [
         canActivate: [AuthService]
       },
       {
+        path: 'add_features',
+        component: AddFeatureComponent,
+        canActivate: [AuthService]
+      },
+      {
         path: 'update_company',
         component: UpdateCompanyComponent,
         canActivate: [AuthService]
       },
       {
+        path: 'add_services',
+        component: AddServicesComponent,
+        canActivate: [AuthService]
+      },
+      {
         path: 'update_services',
         component: UpdateServicesComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'add_portfolio',
+        component: AddPortfolioComponent,
         canActivate: [AuthService]
       },
       {

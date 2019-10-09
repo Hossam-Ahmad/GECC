@@ -38,4 +38,12 @@ export class EditServicesComponent implements OnInit {
       id: this.services[index].payload.doc.id } });
   }
 
+  addService() {
+    this.router.navigateByUrl('/cpanel/add_services');
+  }
+
+  remove(index) {
+    this.contentService.removeService(this.services[index].payload.doc.id);
+  }
+
 }
