@@ -8,14 +8,24 @@ import { ContactService } from '../../services/contact.service';
 })
 export class ContactComponent implements OnInit {
   public messages;
+  public messages2 = [];
   constructor(public contactService: ContactService) {
     this.contactService.getMessages().subscribe(data => {
       this.messages = data;
+      this.messages2 = [];
+      for(let i=0;i<this.messages.length;i++) {
+        this.messages2.push(this.messages[i].payload.doc.data());
+      }
     });
    }
 
   ngOnInit() {
-    
+
+  }
+
+  remove(index) {
+    console.log(this.messages[index].payload.doc.id);
+    this.contactService.removeMessage(this.messages[index].payload.doc.id);
   }
 
 }

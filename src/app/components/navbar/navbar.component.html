@@ -27,19 +27,25 @@
           <a class="nav-link waves-light items-style" mdbWavesEffect href="#">{{'contact_nav' | translate}} <span class="sr-only">(current)</span></a>
         </li>
 
+          
+          <li class="nav-item" (click)="login()">
+            <a class="nav-link waves-light items-style" mdbWavesEffect href="#">{{'login' | translate}} <span class="sr-only">(current)</span></a>
+          </li>
+
           <!-- Dropdown -->
           <li class="nav-item dropdown" dropdown>
-            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                {{'language' | translate}} <span class="caret"></span></a>
-            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-                <li class="nav-item translation" (click)="changeLanguage('ar')">
-                    <a class="nav-link dropdown-item waves-light"  mdbWavesEffect style="cursor: pointer" [style.text-decoration]="language == null || language == 'ar' ? 'underline' : 'none'">Ar<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item translation" (click)="changeLanguage('en')">
-                    <a class="nav-link dropdown-item waves-light"  mdbWavesEffect style="cursor: pointer" [style.text-decoration]="language == 'en' ? 'underline' : 'none'">En<span class="sr-only">(current)</span></a>
-                  </li> 
-            </div>
-          </li>
+              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                  {{'language' | translate}} <span class="caret"></span></a>
+              <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                  <li class="nav-item translation" (click)="changeLanguage('ar')">
+                      <a class="nav-link dropdown-item waves-light"  mdbWavesEffect style="cursor: pointer" [style.text-decoration]="language == null || language == 'ar' ? 'underline' : 'none'">Ar<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item translation" (click)="changeLanguage('en')">
+                      <a class="nav-link dropdown-item waves-light"  mdbWavesEffect style="cursor: pointer" [style.text-decoration]="language == 'en' ? 'underline' : 'none'">En<span class="sr-only">(current)</span></a>
+                    </li> 
+              </div>
+            </li>
+            
         </ul>
         <!-- Links -->
 

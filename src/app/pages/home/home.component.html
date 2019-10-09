@@ -142,7 +142,7 @@
    <div class="footer-inner">
      <p>{{'contact_subtitle' | translate}}</p>
      <div class="row">
-        <div class="col col-md-2 col-6 padded">
+        <div class="col col-md-1 col-3">
          <div class="footerContctInner">
            <a href="{{company?.facebook}}">
               <img src="../../../assets/images/facebook.png">
@@ -153,19 +153,22 @@
            <a href="{{company?.instagram}}">
               <img src="../../../assets/images/insta.png">
            </a>
+           <a href="{{company?.linkedin}}">
+            <img src="../../../assets/images/linkedin.png">
+         </a>
          </div>
        </div>
-       <div class="col col-md-3 col-6 contactDetails padded">
+       <div class="col col-md-4 col-9 contactDetails">
          <span>
             {{languageService.getCurrentLanguage() == 'ar' ? company?.address_Ar : company?.address_En }}
           </span>
          <img src="../../../assets/images/location.png">
        </div>
-       <div class="col col-md-3 col-6 contactDetails padded lefted">
+       <div class="col col-md-3 col-6 contactDetails lefted">
         <span>{{company?.tel}}</span>
         <img src="../../../assets/images/phone.png">
       </div>
-      <div class="col col-md-3 col-6 contactDetails padded">
+      <div class="col col-md-3 col-6 contactDetails">
         <span>{{company?.email}}</span>
         <img src="../../../assets/images/email.png">
       </div>

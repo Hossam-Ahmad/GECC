@@ -3,7 +3,12 @@
         <span>
             &copy;
             {{test | date: 'yyyy'}}
+            <a href="http://www.click4ebusiness.com" target="_blank">
+                <img *ngIf="languageService.getCurrentLanguage() == 'ar'" class="footer-logo" src="../../../assets/images/click_logo.png" />
+            </a>
+
             <a href="http://www.click4ebusiness.com" class="link-style" target="_blank"> {{ 'programmedBy' | translate}} </a> 
+            <img *ngIf="languageService.getCurrentLanguage() == 'en'" class="footer-logo" src="../../../assets/images/click_logo.png" />
         </span>
     </div>
 </div>

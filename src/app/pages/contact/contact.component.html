@@ -13,6 +13,9 @@
                                     <table class="table">
                                         <thead class=" text-primary">
                                             <th>
+                                                حذف
+                                            </th>
+                                            <th>
                                                 الرسالة
                                             </th>
                                             <th>
@@ -29,7 +32,8 @@
                                             </th>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let message of messages;let i = index;">
+                                            <tr *ngFor="let message of messages2;let i = index;">
+                                                <td><button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="remove(i)">حذف</button></td>
                                                 <td>{{message.message}}</td>
                                                 <td>{{message.datetime}}</td>
                                                 <td>{{message.email}}</td>

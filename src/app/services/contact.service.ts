@@ -10,7 +10,7 @@ export class ContactService {
     constructor(public httpClient: HttpClient, public authService: AuthService, public fs: AngularFirestore) {}
 
     getMessages() {
-        return this.fs.collection('contacts').valueChanges();
+        return this.fs.collection('contacts').snapshotChanges();
     }
 
     sendMessage(senderName, senderEmail, senderMessage) {
@@ -21,6 +21,10 @@ export class ContactService {
             datetime : formatDate(now, 'dd/MM/yyyy hh:mm:ss a', 'en-US'),
             message : senderMessage
         });
+    }
+
+    removeMessage(docId) {
+        this.fs.collection('contacts').doc(docId).delete();
     }
 
 }

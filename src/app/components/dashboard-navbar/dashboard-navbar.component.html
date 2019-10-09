@@ -20,6 +20,9 @@
               <li class="nav-item"  (click)="clickEvent('/cpanel/contact')"  [ngClass]="status == '/cpanel/contact' ? 'active' : 'in-active'">
                 <a class="nav-link waves-light items-style" mdbWavesEffect  href="#" routerLinkActive="on" [routerLink]="'/cpanel/contact'">التواصل</a>
               </li>
+              <li class="nav-item"  (click)="logout()">
+                <a class="nav-link waves-light items-style" mdbWavesEffect routerLinkActive="on">تسجيل خروح</a>
+              </li>
       
               </ul>
               <!-- Links -->

@@ -16,15 +16,19 @@ export class ServicesComponent implements OnInit {
     "../../../assets/images/servPic3.png",
   ];
   services = [];
+  services2 = [];
 
-  constructor(public contentService: ContentService, public languageService: LanguageService) { 
-    this.contentService.getServices().subscribe(data =>{
+  constructor(public contentService: ContentService, public languageService: LanguageService) {
+    this.contentService.getServices().subscribe(data => {
       this.services = data;
+      for (let index = 0; index < this.services.length; index++) {
+        this.services2.push(this.services[index].payload.doc.data());
+      }
     });
   }
 
   ngOnInit() {
-    
+
   }
 
 }

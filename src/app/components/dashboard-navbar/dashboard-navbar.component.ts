@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-dashboard-navbar',
@@ -10,7 +11,7 @@ export class DashboardNavbarComponent implements OnInit {
 
   status = '/';
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public authService: AuthService) { }
 
   ngOnInit() {
     this.status = this.router.url;
@@ -18,6 +19,10 @@ export class DashboardNavbarComponent implements OnInit {
 
   clickEvent(e) {
     this.status = e;
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

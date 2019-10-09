@@ -100,7 +100,7 @@ export class ContentService {
 
     updateTopPortfolio(docId, data) {
         this.fs.collection('top-portfolio')
-        .doc(docId).set({   
+        .doc(docId).set({
             image : data.image,
             tag_Ar : data.tag_Ar,
             tag_En : data.tag_En,

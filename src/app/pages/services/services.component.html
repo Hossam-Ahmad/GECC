@@ -2,7 +2,7 @@
 <section class="services-content" style="background-color: #fff">
     <div class="container">
 
-    <div class="every-service" *ngFor="let service of services;let i = index;">
+    <div class="every-service" *ngFor="let service of services2;let i = index;">
        <div class="row" *ngIf="i%2 == 0">
            <div class="col col-12 col-md-3">
                <div class="service-picture">
@@ -11,8 +11,8 @@
             </div>
             <div class="col col-md-9">
                    <div class="service-detail">
-                      <h3>{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
-                      <p>
+                      <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
+                      <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
                         {{languageService.getCurrentLanguage() == 'ar' ? service?.details_Ar : service?.details_En }}
                       </p>
                </div>
@@ -21,8 +21,8 @@
        <div class="row" *ngIf="i%2 != 0">
             <div class="col col-md-9">
                     <div class="service-detail">
-                        <h3>{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
-                        <p>
+                        <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
+                        <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
                             {{languageService.getCurrentLanguage() == 'ar' ? service?.details_Ar : service?.details_En }}
                         </p>
                 </div>

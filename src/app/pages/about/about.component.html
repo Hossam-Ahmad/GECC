@@ -8,16 +8,16 @@
     </section>
     <section class="messages">
         <div class="container">
-            <h3>{{'our_message' | translate}}</h3>
-            <p>
+            <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{'our_message' | translate}}</h3>
+            <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
                 {{languageService.getCurrentLanguage() == 'ar' ? data?.our_message_Ar : data?.our_message_En }}
             </p>
         </div>
     </section>
     <section class="aboutGECC">
         <div class="container">
-            <h3 style="direction: rtl">{{'about_nav' | translate}} GECC</h3>
-            <p>
+            <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }" style="direction: rtl">{{'about_nav' | translate}} GECC</h3>
+            <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
                 {{languageService.getCurrentLanguage() == 'ar' ? data?.abour_Ar : data?.about_En }}
             </p>
         </div>
@@ -25,28 +25,28 @@
     
     <section class="goals" style="background-color: #fff">
         <div class="container">
-            <h3>{{'our_targets' | translate}}</h3>
-            <p>{{'our_targets_subtitle' | translate}}</p>
+            <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{'our_targets' | translate}}</h3>
+            <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{'our_targets_subtitle' | translate}}</p>
             <ul *ngIf="languageService.getCurrentLanguage() == 'ar'" >
-                <li *ngFor="let x of targetsAr">{{x}}</li>
+                <li class="ar ar-item" *ngFor="let x of targetsAr">{{x}}</li>
             </ul>
             <ul *ngIf="languageService.getCurrentLanguage() == 'en'" >
-                <li *ngFor="let x of targetsEn">{{x}}</li>
+                <li class="en en-item" *ngFor="let x of targetsEn">{{x}}</li>
             </ul>
         </div>
     </section>
     <section class="mission" style="background-color: #7ac382">
         <div class="container">
-          <h3>{{'our_missions' | translate}}</h3>
-          <p>
+          <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{'our_missions' | translate}}</h3>
+          <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
                 {{languageService.getCurrentLanguage() == 'ar' ? data?.our_mission_Ar : data?.our_mission_En }}
           </p>
         </div>
     </section>
     <section class="view" style="background-color: #fff">
         <div class="container">
-           <h3>{{'our_vision' | translate}}</h3>
-           <p>
+           <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{'our_vision' | translate}}</h3>
+           <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
                 {{languageService.getCurrentLanguage() == 'ar' ? data?.out_vision_Ar : data?.out_vision_En }}
            </p>
         </div>
