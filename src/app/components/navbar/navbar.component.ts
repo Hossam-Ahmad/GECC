@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { NavbarComponent as navmdb } from '../../../../node_modules/angular-bootstrap-md/lib/free/navbars/navbar.component';
+import { ContentService } from 'src/app/services/content.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +15,10 @@ export class NavbarComponent implements OnInit {
 
   status = '/';
   language = '';
+  interval;
+  sixthPage = false;
+  sixthPageAr = '';
+  sixthPageEn = '';
 
   clickEvent(e) {
       this.status = e;
@@ -21,11 +27,21 @@ export class NavbarComponent implements OnInit {
       }
   }
 
-  constructor(public translate: TranslateService, public router: Router) { }
+  constructor(public translate: TranslateService,
+              public router: Router,
+              public contentService: ContentService,
+              public languageService: LanguageService) {
+                this.hasPage();
+               }
 
   ngOnInit() {
     this.status = this.router.url;
     this.language = localStorage.getItem('language');
+    setInterval(() => {
+      if (this.contentService.goToContact) {
+        this.contact();
+      }
+    }, 1000);
   }
 
   changeLanguage(language) {
@@ -38,18 +54,30 @@ export class NavbarComponent implements OnInit {
   }
 
   contact() {
+    this.contentService.goToContact = true;
     if (this.navRef.shown) {
       this.navRef.toggle();
     }
     const el: HTMLElement|null = document.getElementById('contact');
-    if (el) {
-      setTimeout(() =>
-        el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+    if (el && this.contentService.goToContact) {
+        setTimeout(() =>
+          el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+        this.contentService.goToContact = false;
+        clearInterval(this.interval);
     }
   }
 
-  login() {
+  hasPage() {
+    this.contentService.hasPage().subscribe( data => {
+      this.sixthPage = data[data.length - 1].payload.doc.data()["show"];
+      this.sixthPageAr = data[data.length - 1].payload.doc.data()["title_Ar"];
+      this.sixthPageEn = data[data.length - 1].payload.doc.data()["title_En"];
+      console.log(this.sixthPage);
+    });
+  }
 
+  login() {
+    this.router.navigateByUrl('https://www.gecc-ksa.co/login.aspx');
   }
 
 }

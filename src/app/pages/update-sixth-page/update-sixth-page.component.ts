@@ -3,11 +3,11 @@ import { ContentService } from 'src/app/services/content.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-update-features',
-  templateUrl: './update-features.component.html',
-  styleUrls: ['./update-features.component.scss']
+  selector: 'app-update-sixth-page',
+  templateUrl: './update-sixth-page.component.html',
+  styleUrls: ['./update-sixth-page.component.scss']
 })
-export class UpdateFeaturesComponent implements OnInit {
+export class UpdateSixthPageComponent implements OnInit {
 
   public id;
   public title_Ar = '';
@@ -42,8 +42,8 @@ export class UpdateFeaturesComponent implements OnInit {
       Update['subtitle_Ar'] = this.subtitle_Ar;
       Update['subtitle_En'] = this.subtitle_En;
       Update['image'] = this.image;
-      this.contentService.updateFeatures(this.id, Update);
-      this.router.navigateByUrl('/cpanel/edit_home');
+      this.contentService.updateSixthPage(this.id, Update);
+      this.router.navigateByUrl('/cpanel/edit_pagee');
     } else {
       alert('ادخل جميع البيانات');
     }

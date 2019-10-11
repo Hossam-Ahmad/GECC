@@ -11,6 +11,8 @@ export class EditServicesComponent implements OnInit {
 
   public services;
   public services2 = [];
+  public showLabel = 'إظهار';
+  public hideLabel = 'إخفاء';
 
   constructor(public contentService: ContentService, public router: Router) {
     this.initData();
@@ -44,6 +46,14 @@ export class EditServicesComponent implements OnInit {
 
   remove(index) {
     this.contentService.removeService(this.services[index].payload.doc.id);
+  }
+
+  toggle(index) {
+    if (this.services2[index].show) {
+      this.contentService.hideService(this.services[index].payload.doc.id);
+    } else {
+      this.contentService.showService(this.services[index].payload.doc.id);
+    }
   }
 
 }

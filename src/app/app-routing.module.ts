@@ -29,14 +29,20 @@ import { ForgetComponent } from './pages/forget/forget.component';
 import { AddFeatureComponent } from './pages/add-feature/add-feature.component';
 import { AddServicesComponent } from './pages/add-services/add-services.component';
 import { AddPortfolioComponent } from './pages/add-portfolio/add-portfolio.component';
+import { AddSliderComponent } from './pages/add-slider/add-slider.component';
+import { SixthPageComponent } from './pages/sixth-page/sixth-page.component';
+import { EditSixthPageComponent } from './pages/edit-sixth-page/edit-sixth-page.component';
+import { UpdateSixthPageComponent } from './pages/update-sixth-page/update-sixth-page.component';
+import { AddPageeComponent } from './pages/add-pagee/add-pagee.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  {path : 'client', component: ClientComponent},
-  {path : 'services', component: ServicesComponent},
-  {path : 'portfolio', component: PortoflioComponent},
+  { path : '', component: HomeComponent },
+  { path : 'about', component: AboutComponent },
+  { path : 'client', component: ClientComponent },
+  { path : 'services', component: ServicesComponent },
+  { path : 'portfolio', component: PortoflioComponent },
+  { path : 'page', component: SixthPageComponent },
   {
     path: 'cpanel',
     component: CpanelComponent,
@@ -72,6 +78,21 @@ const routes: Routes = [
         canActivate: [AuthService]
       },
       {
+        path: 'add_pagee',
+        component: AddPageeComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'edit_pagee',
+        component: EditSixthPageComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'update_pagee',
+        component: UpdateSixthPageComponent,
+        canActivate: [AuthService]
+      },
+      {
         path: 'edit_home',
         component: EditHomeComponent,
         canActivate: [AuthService]
@@ -84,6 +105,11 @@ const routes: Routes = [
       {
         path: 'update_about',
         component: UpdateAboutComponent,
+        canActivate: [AuthService]
+      },
+      {
+        path: 'add_slider',
+        component: AddSliderComponent,
         canActivate: [AuthService]
       },
       {

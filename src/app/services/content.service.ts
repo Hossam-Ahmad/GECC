@@ -4,6 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable()
 export class ContentService {
 
+    public goToContact = false;
+
     constructor(public fs: AngularFirestore) {}
 
     getSlider() {
@@ -100,8 +102,24 @@ export class ContentService {
             title_En : data.title_En,
             details_Ar : data.details_Ar,
             details_En : data.details_En,
+            show: true,
         });
     }
+
+    showService(docId) {
+        this.fs.collection('services')
+        .doc(docId).update({
+            show: true,
+        });
+    }
+
+    hideService(docId) {
+        this.fs.collection('services')
+        .doc(docId).update({
+            show: false,
+        });
+    }
+
     removeService(docId) {
         this.fs.collection('services').doc(docId).delete();
     }
@@ -200,10 +218,61 @@ export class ContentService {
         }
         Update[KeyEn] = valueEn;
 
-        console.log(Update);
-
         this.fs.collection('company')
         .doc(docId).update(Update);
+    }
+
+    hasPage() {
+        return this.fs.collection('sixth-page').snapshotChanges();
+    }
+
+    removeSixthPage() {
+
+        const Update = {};
+        Update['show'] = false;
+
+        this.fs.collection('sixth-page')
+        .doc('meta').update(Update);
+
+        this.fs.collection('sixth-page').snapshotChanges().subscribe( data => {
+            if (data.length > 1) {
+                for (let index = 0; index < data.length - 1; index++) {
+                    const docId = data[index].payload.doc.id;
+                    this.fs.collection('sixth-page').doc(docId).delete();
+                }
+            }
+        });
+    }
+
+    addSixthPage(data) {
+        this.fs.collection('sixth-page').add({
+            title_Ar : data.title_Ar,
+            title_En : data.title_En,
+            subtitle_Ar : data.subtitle_Ar,
+            subtitle_En : data.subtitle_En,
+            image : data.image,
+        });
+
+        const Update = {};
+        Update['show'] = true;
+
+        this.fs.collection('sixth-page')
+        .doc('meta').update(Update);
+    }
+
+    updateSixthPage(docId, data) {
+        this.fs.collection('sixth-page')
+        .doc(docId).update({
+            title_Ar : data.title_Ar,
+            title_En : data.title_En,
+            subtitle_Ar : data.subtitle_Ar,
+            subtitle_En : data.subtitle_En,
+            image : data.image,
+        });
+    }
+
+    removeSixthPageItem(docId) {
+        this.fs.collection('sixth-page').doc(docId).delete();
     }
 
 }

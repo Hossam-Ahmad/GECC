@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.email !== '' && this.password !== '') {
       this.authService.login().subscribe(result => {
-        console.log(result);
         if (this.email === result[0]['admin_username'] && this.password === result[0]['admin_password']) {
           this.authService.setToken(result[0]['token']);
           this.router.navigateByUrl('/cpanel/dashboard');

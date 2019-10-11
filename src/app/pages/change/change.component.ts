@@ -26,7 +26,6 @@ export class ChangeComponent implements OnInit {
     let flag = 0;
     if (this.oldEmail !== '' && this.oldPassword !== '' && this.newEmail !== '' && this.newPassword !== '') {
       this.authService.login().subscribe(result => {
-        console.log(result);
         if (this.oldEmail === result[0]['admin_username'] && this.oldPassword === result[0]['admin_password']) {
           this.authService.changeCredentials(this.newEmail, this.newPassword);
           alert('تم التعديل بنجاح');

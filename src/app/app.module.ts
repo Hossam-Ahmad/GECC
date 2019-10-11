@@ -63,6 +63,11 @@ import { ForgetComponent } from './pages/forget/forget.component';
 import { AddFeatureComponent } from './pages/add-feature/add-feature.component';
 import { AddPortfolioComponent } from './pages/add-portfolio/add-portfolio.component';
 import { AddServicesComponent } from './pages/add-services/add-services.component';
+import { AddSliderComponent } from './pages/add-slider/add-slider.component';
+import { SixthPageComponent } from './pages/sixth-page/sixth-page.component';
+import { EditSixthPageComponent } from './pages/edit-sixth-page/edit-sixth-page.component';
+import { UpdateSixthPageComponent } from './pages/update-sixth-page/update-sixth-page.component';
+import { AddPageeComponent } from './pages/add-pagee/add-pagee.component';
 
 export function createHttpLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -117,6 +122,11 @@ const firebaseConfig = {
     AddFeatureComponent,
     AddPortfolioComponent,
     AddServicesComponent,
+    AddSliderComponent,
+    SixthPageComponent,
+    EditSixthPageComponent,
+    UpdateSixthPageComponent,
+    AddPageeComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -71,7 +71,11 @@ export class EditHomeComponent implements OnInit {
   }
 
   deleteSliders(index) {
-    this.contentService.deleteSlider(this.sliders[index].payload.doc.id);
+    if (this.sliders.length > 1) {
+      this.contentService.deleteSlider(this.sliders[index].payload.doc.id);
+    } else {
+      alert('يجب على الاقل ان يكون هناك عنصر واحد في السلايدر');
+    }
   }
 
   updateTopServices(index) {
@@ -100,6 +104,10 @@ export class EditHomeComponent implements OnInit {
       subtitle_Ar: this.features2[index].subtitle_Ar,
       subtitle_En: this.features2[index].subtitle_En,
       image: this.features2[index].image } });
+  }
+
+  addSlide() {
+    this.router.navigateByUrl('/cpanel/add_slider');
   }
 
   addFeature() {

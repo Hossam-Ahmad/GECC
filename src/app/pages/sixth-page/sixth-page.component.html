@@ -1,0 +1,40 @@
+<app-upper-component></app-upper-component>
+<section class="services-content" style="background-color: #fff">
+    <div class="container">
+
+    <div class="every-service" *ngFor="let service of services2;let i = index;">
+       <div class="row" *ngIf="i%2 == 0">
+           <div class="col col-12 col-md-3">
+               <div class="service-picture">
+                   <img src="{{service?.image}}" style="width: 100%">
+               </div>
+            </div>
+            <div class="col col-md-9">
+                   <div class="service-detail">
+                      <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
+                      <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
+                        {{languageService.getCurrentLanguage() == 'ar' ? service?.subtitle_Ar : service?.subtitle_En }}
+                      </p>
+               </div>
+           </div>
+       </div>
+       <div class="row" *ngIf="i%2 != 0">
+            <div class="col col-md-9">
+                    <div class="service-detail">
+                        <h3 [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">{{languageService.getCurrentLanguage() == 'ar' ? service?.title_Ar : service?.title_En }}</h3>
+                        <p [ngClass]="{'ar': languageService.getCurrentLanguage() == 'ar', 'en':languageService.getCurrentLanguage() == 'en' }">
+                            {{languageService.getCurrentLanguage() == 'ar' ? service?.subtitle_Ar : service?.subtitle_En }}
+                        </p>
+                </div>
+            </div>
+           <div class="col col-12 col-md-3">
+               <div class="service-picture">
+                   <img src="{{service?.image}}" style="width: 100%">
+               </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
+<app-footer></app-footer>

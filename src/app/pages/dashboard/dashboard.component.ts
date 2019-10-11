@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from 'src/app/services/content.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() {
+  public hasPage = false;
+  public title_Ar = '';
+
+  constructor(public contentService: ContentService) {
+    this.contentService.hasPage().subscribe( data => {
+      this.hasPage = data[data.length - 1].payload.doc.data()["show"];
+      this.title_Ar = data[data.length - 1].payload.doc.data()["title_Ar"];
+    });
   }
 
   ngOnInit() {}
+
+  remove() {
+    this.contentService.removeSixthPage();
+  }
 
 }

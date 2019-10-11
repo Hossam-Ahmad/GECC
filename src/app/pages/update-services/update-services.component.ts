@@ -18,7 +18,6 @@ export class UpdateServicesComponent implements OnInit {
 
   constructor(public contentService: ContentService, public route: ActivatedRoute, public router: Router) {
     this.route.queryParams.subscribe(params => {
-      console.log(params);
       this.title_Ar = params['title_Ar'];
       this.title_En = params['title_En'];
       this.details_Ar = params['details_Ar'];

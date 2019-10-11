@@ -2,7 +2,7 @@
     <div class="container">
         <app-navbar></app-navbar>
         <div class="client-details">
-            <h1 class="client-header" style="font-family: cairo-black">{{'our_services' | translate}}</h1>
+            <h1 class="client-header" style="font-family: cairo-black">{{languageService.getCurrentLanguage() == 'ar' ? sixthPageAr : sixthPageEn }}</h1>
         </div>
         </div>
 </section>

@@ -7,8 +7,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-danger">
-                                <h4 class="card-title ">الخدمات</h4>
-                                <p class="card-category"> قائمه بخدمات الشركة</p>
+                                <h4 class="card-title ">{{title_Ar}}</h4>
                             </div>
                             <div class="card-body">
                                     <button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
@@ -23,7 +22,7 @@
                                                 تعديل
                                             </th>
                                             <th>
-                                                اخفاء / اظهار
+                                                الصورة
                                             </th>
                                             <th>
                                                 تفاصيل انجليزي
@@ -43,10 +42,9 @@
                                                 <td><button mat-raised-button type="submit" class="btn btn-danger pull-right"  (click)="remove(i)">حذف</button></td>
                                                 <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
                                                     border-color: #4c7b9d;" (click)="update(i)">تعديل</button></td>
-                                                <td><button mat-raised-button type="submit" class="btn btn-primary pull-right" style="background-color: #4a78a0;
-                                                    border-color: #4c7b9d;" (click)="toggle(i)">{{services2[i].show? showLabel : hideLabel}}</button></td>
-                                                <td>{{service.details_En}}</td>
-                                                <td>{{service.details_Ar}}</td>
+                                                <td><img style="width: 200px;" src="{{service?.image}}"></td>
+                                                <td>{{service.subtitle_En}}</td>
+                                                <td>{{service.subtitle_Ar}}</td>
                                                 <td>{{service.title_En}}</td>
                                                 <td>{{service.title_Ar}}</td>
                                             </tr>

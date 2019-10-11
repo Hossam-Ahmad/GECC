@@ -24,7 +24,6 @@ export class ContactComponent implements OnInit {
   }
 
   remove(index) {
-    console.log(this.messages[index].payload.doc.id);
     this.contactService.removeMessage(this.messages[index].payload.doc.id);
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import { ContentService } from './services/content.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   title = 'website';
 
-  constructor(public router: Router, public translate: TranslateService) {
+  constructor(public router: Router, public translate: TranslateService, public contentService: ContentService) {
     translate.addLangs(['ar', 'en']);
     translate.setDefaultLang('ar');
     const language = localStorage.getItem('language');
@@ -22,14 +23,16 @@ export class AppComponent {
   }
 
   onActivate(event) {
-    const scrollToTop = window.setInterval(() => {
+    if (!this.router.url.toString().includes('#contact')) {
+      const scrollToTop = window.setInterval(() => {
         const pos = window.pageYOffset;
         if (pos > 0) {
             window.scrollTo(0, pos - 20); // how far to scroll on each step
         } else {
             window.clearInterval(scrollToTop);
         }
-    }, 16);
+      }, 16);
+    }
 }
 
 }
