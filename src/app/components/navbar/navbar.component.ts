@@ -72,7 +72,6 @@ export class NavbarComponent implements OnInit {
       this.sixthPage = data[data.length - 1].payload.doc.data()["show"];
       this.sixthPageAr = data[data.length - 1].payload.doc.data()["title_Ar"];
       this.sixthPageEn = data[data.length - 1].payload.doc.data()["title_En"];
-      console.log(this.sixthPage);
     });
   }
 
